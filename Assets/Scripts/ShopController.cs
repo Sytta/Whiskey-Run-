@@ -29,9 +29,10 @@ public class ShopController : MonoBehaviour
 		}
 	}
 
-	void PurchaseItem(string ability, int playerId)
+	void PurchaseItem(int playerId, string ability, string input)
 	{
 		Debug.Log ("Purchased " + ability + " by player " + playerId);
+		GameManager.instance.players [playerId].PurchaseAbility (ability, input);
 	}
 }
 
