@@ -17,15 +17,11 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnEnter()
 		{
 			timeLeft = 4.0f;
+            owner.currentState = this;
             // Start countdown
             racingUI = GameManager.instance.racingUI.GetComponent<RacingUI>();
             racingUI.InitCountDown(timeLeft.ToString());
 
-        }
-
-        public void FixedUpdate()
-        {
-            OnUpdate(Time.deltaTime);
         }
 
 		public override void OnExit()

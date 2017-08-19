@@ -14,12 +14,13 @@ public partial class GameStateMachine : MonoBehaviour
             // Show Main Menu ui
             /*Debug.Log("Going from MainMenu to Tutorial");
             OnClickedPlay();*/
-			Instantiate (GameManager.instance.mainMenuPrefab);
+            owner.currentState = this;
+            Instantiate (GameManager.instance.mainMenuPrefab);
         }
 
 		public override void OnExit()
 		{
-			// Hide the main menu ui
+            // Hide the main menu ui
 		}
 
 		public override void OnUpdate(float deltaTime)

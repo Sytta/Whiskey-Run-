@@ -5,7 +5,7 @@ using UnityEngine;
 public partial class GameStateMachine : MonoBehaviour
 {
 
-	private abstract class GameState
+	public abstract class GameState
 	{
 		protected GameStateMachine owner;
 
@@ -23,7 +23,7 @@ public partial class GameStateMachine : MonoBehaviour
 
 	Dictionary<string, GameState> gameStates;
 
-	private GameState currentState;
+	public GameState currentState;
 
 	private void LoadUpStates()
 	{
@@ -38,8 +38,6 @@ public partial class GameStateMachine : MonoBehaviour
 		gameStates.Add("ShowRaceResults", new GSShowRaceResults(this)); 
 		gameStates.Add("UpgradesMenu", new GSUpgradeMenu(this)); 
 		gameStates.Add("RoundsOver", new GSRoundsOver(this)); 
-
-
 	}
 
 	public void GoToState(string stateName)
@@ -71,9 +69,6 @@ public partial class GameStateMachine : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		foreach(var statesEntry in gameStates)
-		{
-			statesEntry.Value.OnUpdate(Time.deltaTime);
-		}
+        currentState.OnUpdate(Time.deltaTime);
 	}
 }

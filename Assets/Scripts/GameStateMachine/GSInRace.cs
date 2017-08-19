@@ -14,6 +14,7 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public override void OnEnter()
 		{
+            owner.currentState = this;
 			numberOfPlayersFinished = 0;
             // Enable playerInput
             GameManager.instance.caravanSpanwer.EnableCaravanInput();
@@ -35,7 +36,10 @@ public partial class GameStateMachine : MonoBehaviour
 			// Once both players finish, change state
 			if (numberOfPlayersFinished == 2)
 			{
-				owner.GoToState("ShowRaceResults");
+                // Destroy caravans through the spawner
+                //GameManager.instance.caravanSpanwer.CountCrates();
+                GameManager.instance.caravanSpanwer.DestroyCaravans();
+                owner.GoToState("ShowRaceResults");
 			}
 		}
 	}
