@@ -27,8 +27,9 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public override void OnUpdate(float deltaTime)
 		{
-			// nothing for now.
-		}
+            // Update nbCrate
+            //GameManager.instance.UpdatePlayerInfo();
+        }
 
 		public void OnPlayerFinished(int player)
 		{
@@ -37,7 +38,6 @@ public partial class GameStateMachine : MonoBehaviour
 			if (numberOfPlayersFinished == 2)
 			{
                 // Destroy caravans through the spawner
-                //GameManager.instance.caravanSpanwer.CountCrates();
                 GameManager.instance.caravanSpanwer.DestroyCaravans();
                 owner.GoToState("ShowRaceResults");
 			}

@@ -10,7 +10,7 @@ public class CaravanSpawner : MonoBehaviour
 	[SerializeField]
 	List<GameObject> SpawnPoints;
 
-    List<GameObject> caravans;
+    public List<GameObject> caravans { get; set; }
 
 	void Start()
 	{
@@ -42,14 +42,16 @@ public class CaravanSpawner : MonoBehaviour
 	// Use this for initialization
 	public void Initialize ()
 	{
-		while (caravans.Count != 0)
+		while (caravans != null && caravans.Count != 0)
 		{
 			Destroy (caravans [0]);
 		}
 
         caravans = new List<GameObject>();
-		caravans.Add(SpawnCaravan(SpawnPoints[0].transform, 1));
-        caravans.Add(SpawnCaravan(SpawnPoints[1].transform, 2));
+        for (int i = 0; i < GameManager.instance.nbPlayers; i++)
+        {
+            caravans.Add(SpawnCaravan(SpawnPoints[i].transform, GameManager.instance.players[i].id));
+        }
 	}
 
      public void DestroyCaravans()

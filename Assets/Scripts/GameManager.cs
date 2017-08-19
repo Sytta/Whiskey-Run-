@@ -46,10 +46,18 @@ public class GameManager : MonoBehaviour
 
 		for (int i = 0; i < nbPlayers; i++)
 		{
-			players [i] = new PlayerInfo ();
+			players [i] = new PlayerInfo (i + 1, 3000, 5);
 		}
 
 		GameStateMachine.Init ();
 	}
+
+   public void UpdatePlayerInfo()
+    {
+        for (int i = 0; i < nbPlayers; i++)
+        {
+            //players[i].nbCrates = caravanSpanwer.caravans[i].crates.Count;
+        }
+    }
 }
 

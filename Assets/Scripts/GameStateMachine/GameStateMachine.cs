@@ -69,6 +69,7 @@ public partial class GameStateMachine : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-        currentState.OnUpdate(Time.deltaTime);
+        if (currentState != null)
+            currentState.OnUpdate(Time.deltaTime);
 	}
 }

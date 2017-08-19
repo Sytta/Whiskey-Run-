@@ -30,16 +30,16 @@ public class ShopController : MonoBehaviour
 
 				item.GetComponent<Button> ().onClick.AddListener (delegate
 				{
-					PurchaseItem (playerId, GameManager.instance.AbilitiesDatabase [abilityIndex].Name, "");
+					PurchaseItem (playerId, GameManager.instance.AbilitiesDatabase [abilityIndex].Name);
 				});
 			}
 		}
 	}
 
-	void PurchaseItem(int playerId, string ability, string input)
+	void PurchaseItem(int playerId, string ability)
 	{
 		Debug.Log ("Purchased " + ability + " by player " + playerId);
-		GameManager.instance.players [playerId].PurchaseAbility (ability, input);
+		GameManager.instance.players [playerId].PurchaseAbility (ability);
 	}
 		
 	public void OpenPanel()
