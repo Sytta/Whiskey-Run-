@@ -26,7 +26,9 @@ public class CaravanSpawner : MonoBehaviour
         Debug.Log("Caravan " + playerId + " Rotation: " + newCaravan.transform.rotation.eulerAngles);
 
         // whacky way of setting the viewport for splitscreen
-        newCaravan.GetComponentInChildren<Camera>().rect = new Rect(0.5f - 0.5f * (playerId - 1), 0, 0.5f, 1);
+        // 1 -> 0
+        // 2 -> 0.5
+        newCaravan.GetComponentInChildren<Camera>().rect = new Rect(0.5f * (playerId - 1), 0, 0.5f, 1);
 
         // Add caravan setup here
         newCaravan.transform.rotation.Set(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);

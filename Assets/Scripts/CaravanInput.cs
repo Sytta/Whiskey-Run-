@@ -7,15 +7,18 @@ public class CaravanInput : MonoBehaviour {
 	[SerializeField]
 	MotionControl motionControl; // Control over the player's prefab
 
+    public int playerId { get; set; }
+
 	string playerInputSuffix;
 
 	public void SetPlayer(int playerNumber)
 	{
 		if (playerNumber < 1)
 		{
-			playerNumber = 1;
+            playerNumber = 1;
 		}
 		playerInputSuffix = "_P" + playerNumber;
+        playerId = playerNumber;
 	}
 
 	private void Update()
