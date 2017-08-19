@@ -19,19 +19,27 @@ public class ShopController : MonoBehaviour
 				int abilityIndex = j;
 
 				GameObject item = Instantiate (shopItemPrefab, playerShop [i].transform);
-				item.GetComponent<ShopItem> ().SetName (database.Abilities [j].Name);
-				item.GetComponent<ShopItem> ().SetDescription (database.Abilities [j].Description);
+
+				item.GetComponent<ShopItem> ().SetInfo
+				(
+					database.Abilities [j].Name,
+					database.Abilities [j].Description,
+					database.Abilities [j].Cost,
+					database.Abilities [j].Image
+				);
+
 				item.GetComponent<Button> ().onClick.AddListener (delegate
 				{
-					PurchaseItem (database.Abilities [abilityIndex].Name, playerId);
+					PurchaseItem (playerId, database.Abilities [abilityIndex].Name, "");
 				});
 			}
 		}
 	}
 
-	void PurchaseItem(string ability, int playerId)
+	void PurchaseItem(int playerId, string ability, string input)
 	{
 		Debug.Log ("Purchased " + ability + " by player " + playerId);
+		GameManager.instance.players [playerId].PurchaseAbility (ability, input);
 	}
 }
 

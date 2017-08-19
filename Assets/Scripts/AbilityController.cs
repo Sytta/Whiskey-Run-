@@ -51,5 +51,10 @@ public class AbilityController : MonoBehaviour
 				Debug.Log ("Error : Couldn't find ability");
 			}
 		}
+
+		foreach (BaseAbilityComponent component in abilitiesComponents.Values)
+		{
+			component.OnSetup ();
+		}
 	}
 }

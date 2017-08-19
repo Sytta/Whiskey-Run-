@@ -6,7 +6,7 @@ public class Ability : ScriptableObject
 {
 	public string Name;
 	public string Description;
-	public float Cost;
+	public int Cost;
 	public Sprite Image;
 	public AudioClip Sound;
 	public float CoolDown;
