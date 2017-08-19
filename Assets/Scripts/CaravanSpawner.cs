@@ -14,6 +14,9 @@ public class CaravanSpawner : MonoBehaviour {
 	{
 		var newCaravan = GameObject.Instantiate(caravanPrefab, position, rotation);
 		newCaravan.GetComponent<CaravanInput>().SetPlayer(playerId);
+		// whacky way of setting the viewport for splitscreen
+		newCaravan.GetComponentInChildren<Camera>().rect = new Rect(0, 0 + 0.5f * (playerId - 1), 1, 0.5f);
+
 		// Add caravan setup here
 	}
 
