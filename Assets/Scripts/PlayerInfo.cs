@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerInfo
 {
-    string id;
-    int money;
-    ArrayList crates;
+    public int id { get; set; }
+    public int money { get; set; }
+    public int nbCrates { get; set; }
     public Dictionary<string, int> Abilities;
     AbilityController abilityController;
 
-	public PlayerInfo()
+	public PlayerInfo(int id, int money, int nbCrates)
 	{
+        this.id = id;
+        this.money = money;
+        this.nbCrates = nbCrates;
 		Abilities = new Dictionary<string, int> ();
 	}
 

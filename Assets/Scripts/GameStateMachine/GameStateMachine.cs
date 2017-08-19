@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public partial class GameStateMachine : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public partial class GameStateMachine : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-        currentState.OnUpdate(Time.deltaTime);
+        if (currentState != null)
+            currentState.OnUpdate(Time.deltaTime);
 	}
 }
