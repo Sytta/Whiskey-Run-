@@ -5,9 +5,11 @@ using UnityEngine;
 public class AlignToFloor : MonoBehaviour {
 	[SerializeField]
 	float upFixDistanceThreshold = 4.0f, upFixRotationSpeed = 0.6f, groundedDistance = 1.0f, raycastDelay = 0.2f;
+	[SerializeField]
+	bool performAlignment = true;
 
 	float timeSinceLastRaycast = 0.0f;
-	Vector3 floorUpVector;
+	public Vector3 floorUpVector, projectedForward;
 	bool grounded = false;
 
 	public bool IsGrounded() { return grounded; }
@@ -27,7 +29,7 @@ public class AlignToFloor : MonoBehaviour {
 		}
 
 		// fix object up rotation
-		if ((floorUpVector != null) && (floorUpVector != transform.up))
+		if (performAlignment && (floorUpVector != transform.up))
 		{
 			transform.up = Vector3.RotateTowards(transform.up, floorUpVector, upFixRotationSpeed * Time.deltaTime, 200);
 		}
