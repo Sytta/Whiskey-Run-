@@ -8,6 +8,7 @@ public class PlayerInfo
     int money;
     ArrayList crates;
 	Dictionary<string, string> abilitiesInputMapping;
+    AbilityController abilityController;
 
 	public PlayerInfo()
 	{
@@ -19,5 +20,10 @@ public class PlayerInfo
 		money -= GameManager.instance.AbilitiesDatabase.Find(x => x.name == ability).Cost;
 		abilitiesInputMapping.Add (input, ability);
 	}
+
+    public void SetAbilityController(AbilityController ab)
+    {
+        abilityController = ab;
+    }
 
 }

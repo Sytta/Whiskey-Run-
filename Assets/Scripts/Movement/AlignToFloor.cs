@@ -27,10 +27,10 @@ public class AlignToFloor : MonoBehaviour {
 		}
 
 		// fix object up rotation
-		if ((floorUpVector != null) && (floorUpVector != transform.up))
+		if ((floorUpVector != transform.up))
 		{
-			transform.up = Vector3.RotateTowards(transform.up, floorUpVector, upFixRotationSpeed * Time.deltaTime, 200);
-		}
+            //transform.rotation = Quaternion.FromToRotation(transform.up, floorUpVector);
+        }
 	}
 	
 }

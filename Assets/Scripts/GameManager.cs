@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] public List<Ability> AbilitiesDatabase;
 
+    [SerializeField] public CaravanSpawner caravanSpanwer;
+
     public static GameManager instance = null;
 
      //Awake is always called before any Start functions

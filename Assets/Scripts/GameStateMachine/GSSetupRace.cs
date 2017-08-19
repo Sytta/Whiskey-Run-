@@ -7,18 +7,24 @@ public partial class GameStateMachine : MonoBehaviour
 {
 	private class GSSetupRace : GameState
 	{
+
 		public GSSetupRace(GameStateMachine owner) : base(owner) { }
 
 		public override void OnEnter()
 		{
-			// Ready level
-			// Spawn caravans
-		}
+            Debug.Log("Setting up scene");
+            // Ready level
+            // Spawn caravans
+            GameManager.instance.caravanSpanwer.Initialize();
+
+            OnSetupFinished();
+
+        }
 
 		public override void OnExit()
 		{
-			// ?
-		}
+            // ?
+        }
 
 		public override void OnUpdate(float deltaTime)
 		{

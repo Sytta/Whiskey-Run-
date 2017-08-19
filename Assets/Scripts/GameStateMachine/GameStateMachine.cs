@@ -27,15 +27,18 @@ public partial class GameStateMachine : MonoBehaviour
 
 	private void LoadUpStates()
 	{
-		// Add entries to the state dictionary here.
-		gameStates["MainMenu"] = new GSMainMenu(this);
-		gameStates["Tutorial"] = new GSTutorial(this);
-		gameStates["SetupRace"] = new GSTutorial(this); //Change class
-		gameStates["Countdown"] = new GSTutorial(this); //Change class
-		gameStates["InRace"] = new GSTutorial(this); //Change class
-		gameStates["ShowRaceResults"] = new GSTutorial(this); //Change class
-		gameStates["UpgradesMenu"] = new GSTutorial(this); //Change class
-		gameStates["RoundsOver"] = new GSTutorial(this); //Change class
+        // Add entries to the state dictionary here.
+        gameStates = new Dictionary<string, GameState>();
+
+		gameStates.Add("MainMenu", new GSMainMenu(this));
+		gameStates.Add("Tutorial", new GSTutorial(this));
+		gameStates.Add("SetupRace", new GSSetupRace(this)); 
+		gameStates.Add("Countdown", new GSCountdown(this)); 
+		gameStates.Add("InRace", new GSInRace(this)); 
+		gameStates.Add("ShowRaceResults", new GSShowRaceResults(this)); 
+		gameStates.Add("UpgradesMenu", new GSUpgradeMenu(this)); 
+		gameStates.Add("RoundsOver", new GSRoundsOver(this)); 
+
 
 	}
 
@@ -43,7 +46,8 @@ public partial class GameStateMachine : MonoBehaviour
 	{
 		GameState nextState = null;
 		if (gameStates.TryGetValue(stateName, out nextState)){
-			currentState.OnExit();
+            if (currentState != null)
+			    currentState.OnExit();
 			nextState.OnEnter();
 		}
 		else
@@ -56,6 +60,7 @@ public partial class GameStateMachine : MonoBehaviour
 	void Start()
 	{
 		LoadUpStates();
+        GoToState("MainMenu");
 	}
 
 	// Update is called once per frame
