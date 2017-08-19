@@ -6,7 +6,6 @@ public class ShopController : MonoBehaviour
 {
 	[SerializeField] GameObject shopItemPrefab;
 	[SerializeField] GameObject[] playerShop;
-	[SerializeField] AbilitiesDatabase database;
 
 	void Start()
 	{
@@ -14,24 +13,24 @@ public class ShopController : MonoBehaviour
 		{
 			int playerId = i;
 
-			for (int j = 0; j < database.Abilities.Count; j++)
+			for (int j = 0; j < GameManager.instance.AbilitiesDatabase.Count; j++)
 			{
 				int abilityIndex = j;
 
 				GameObject item = Instantiate (shopItemPrefab, playerShop [i].transform);
-				item.name = database.Abilities [j].Name;
+				item.name = GameManager.instance.AbilitiesDatabase [j].Name;
 
 				item.GetComponent<ShopItem> ().SetInfo
 				(
-					database.Abilities [j].Name,
-					database.Abilities [j].Description,
-					database.Abilities [j].Cost,
-					database.Abilities [j].Image
+					GameManager.instance.AbilitiesDatabase [j].Name,
+					GameManager.instance.AbilitiesDatabase [j].Description,
+					GameManager.instance.AbilitiesDatabase [j].Cost,
+					GameManager.instance.AbilitiesDatabase [j].Image
 				);
 
 				item.GetComponent<Button> ().onClick.AddListener (delegate
 				{
-					PurchaseItem (playerId, database.Abilities [abilityIndex].Name, "");
+					PurchaseItem (playerId, GameManager.instance.AbilitiesDatabase [abilityIndex].Name, "");
 				});
 			}
 		}
