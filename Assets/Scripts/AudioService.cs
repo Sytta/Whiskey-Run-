@@ -3,10 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioService : MonoBehaviour {
+
+	[System.Serializable]
+	public class SFXMapping
+	{
+		public string Name;
+		public AudioClip Clip;
+	}
+
 	[SerializeField]
-	AudioSource audioSource;
+	List<SFXMapping> SFXDatabase;
 	[SerializeField]
-	AudioClip RaceMusic, MenuMusic;
+	List<SFXMapping> MusicDatabase;
+	[SerializeField]
+	AudioSource musicSource;
+	[SerializeField]
+	List<AudioSource> SFXSources;
 	bool fadingIn;
 
 	[SerializeField]
@@ -18,30 +30,24 @@ public class AudioService : MonoBehaviour {
 	/// Plays the given tune
 	/// </summary>
 	/// <param name="music"> play music. "menu" or "race"</param>
-	public void PlayMusic(string music)
+	public void PlayMusic(string musicName)
 	{
-		// set next song
-		AudioClip selectedClip = null;
-		switch (music)
+		foreach (var music in MusicDatabase)
 		{
-			case "menu":
-				selectedClip = MenuMusic;
+			if (music.Name == musicName)
+			{
+				if (music.Clip != null && musicSource.clip != music.Clip)
+				{
+					nextClip = music.Clip;
+				}
 				break;
-			case "race":
-				selectedClip = RaceMusic;
-				break;
+			}
 		}
-		if(selectedClip != null && audioSource.clip != selectedClip)
-		{
-			nextClip = selectedClip;
-		}
-		audioSource.clip = selectedClip;
-		audioSource.Play();
 	}
 
 	// Use this for initialization
 	void Start () {
-		PlayMusic("menu");
+		PlayMusic("Race");
 	}
 	
 	// Update is called once per frame
@@ -49,20 +55,52 @@ public class AudioService : MonoBehaviour {
 		if(nextClip != null)
 		{
 			//lowerVolume till nill
-			if ((audioSource.volume -= fadeSpeed * Time.deltaTime) == 0)
+			if ((musicSource.volume -= fadeSpeed * Time.deltaTime) <= 0)
 			{
+				musicSource.clip = nextClip;
+				musicSource.Play();
+				nextClip = null;
 				fadingIn = true;
-				audioSource.clip = nextClip;
-				audioSource.Play();
 			}
 		}
 		if (fadingIn)
 		{
 			//raise volume till full
-			if ((audioSource.volume += fadeSpeed * Time.deltaTime)==1)
+			if ((musicSource.volume += fadeSpeed * Time.deltaTime)==1)
 			{
-				nextClip = null;
+				fadingIn = false;
 			}
 		}
+	}
+
+	AudioSource GetAvailableSFXSource()
+	{
+		for (int i = 0; i < SFXSources.Count; ++i)
+		{
+			if (!SFXSources[i].isPlaying)
+			{
+				return SFXSources[i];
+			}
+		}
+
+		return null;
+	}
+
+	void PlayOneShotSFX(string sfxName)
+	{
+		// picks next available audio source and plays a sound unless all are in use
+		foreach (var sfx in SFXDatabase)
+		{
+			if (sfx.Name == sfxName)
+			{
+				var source = GetAvailableSFXSource();
+				if(source != null)
+				{
+					source.PlayOneShot(sfx.Clip);
+				}
+				break;
+			}
+		}
+		
 	}
 }
