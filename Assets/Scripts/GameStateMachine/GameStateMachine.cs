@@ -59,8 +59,13 @@ public partial class GameStateMachine : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		DontDestroyOnLoad (this.gameObject);
+	}
+
+	public void Init()
+	{
 		LoadUpStates();
-        GoToState("MainMenu");
+		GoToState("MainMenu");
 	}
 
 	// Update is called once per frame

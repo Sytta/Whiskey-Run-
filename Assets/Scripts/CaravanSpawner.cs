@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaravanSpawner : MonoBehaviour {
-
+public class CaravanSpawner : MonoBehaviour
+{
 	[SerializeField]
 	GameObject caravanPrefab;
 
@@ -11,6 +11,11 @@ public class CaravanSpawner : MonoBehaviour {
 	List<GameObject> SpawnPoints;
 
     List<GameObject> caravans;
+
+	void Start()
+	{
+		DontDestroyOnLoad (this.gameObject);
+	}
 
 	GameObject SpawnCaravan(Transform transform, int playerId)
 	{
@@ -35,8 +40,13 @@ public class CaravanSpawner : MonoBehaviour {
     }
 
 	// Use this for initialization
-	public void Initialize () {
-        //Debug.Log(SpawnPoints[0].transform.rotation.eulerAngles);
+	public void Initialize ()
+	{
+		while (caravans.Count != 0)
+		{
+			Destroy (caravans [0]);
+		}
+
         caravans = new List<GameObject>();
 		caravans.Add(SpawnCaravan(SpawnPoints[0].transform, 1));
         caravans.Add(SpawnCaravan(SpawnPoints[1].transform, 2));

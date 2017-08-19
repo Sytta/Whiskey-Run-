@@ -12,9 +12,9 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnEnter()
 		{
             // Show Main Menu ui
-            Debug.Log("Going from MainMenu to Tutorial");
-            OnClickedPlay();
-
+            /*Debug.Log("Going from MainMenu to Tutorial");
+            OnClickedPlay();*/
+			Instantiate (GameManager.instance.mainMenuPrefab);
         }
 
 		public override void OnExit()
