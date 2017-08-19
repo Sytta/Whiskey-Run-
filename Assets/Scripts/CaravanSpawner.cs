@@ -44,10 +44,7 @@ public class CaravanSpawner : MonoBehaviour
 	// Use this for initialization
 	public void Initialize ()
 	{
-		while (caravans != null && caravans.Count != 0)
-		{
-			Destroy (caravans [0]);
-		}
+		DestroyCaravans ();
 
         caravans = new List<GameObject>();
         for (int i = 0; i < GameManager.instance.nbPlayers; i++)
@@ -58,6 +55,9 @@ public class CaravanSpawner : MonoBehaviour
 
      public void DestroyCaravans()
     {
+		if (caravans == null)
+			return;
+		
         for (int i = 0; i < caravans.Count; i ++)
         {
             Destroy(caravans[i]);
