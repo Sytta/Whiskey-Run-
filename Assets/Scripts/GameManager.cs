@@ -53,5 +53,13 @@ public class GameManager : MonoBehaviour
 
 		GameStateMachine.Init ();
 	}
+
+   public void UpdatePlayerInfo()
+    {
+        for (int i = 0; i < nbPlayers; i++)
+        {
+            //players[i].nbCrates = caravanSpanwer.caravans[i].crates.Count;
+        }
+    }
 }
 
