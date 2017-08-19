@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MotionControl : MonoBehaviour {
-	float currentSpeed = 0.0f;
+	public float currentSpeed = 0.0f;
 
 	[SerializeField]
 	float maxSpeed = 10.0f, acceleration = 1.0f, deceleration = 5.0f, rotateSpeed = 30.0f;
