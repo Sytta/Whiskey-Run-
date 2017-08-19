@@ -39,6 +39,7 @@ public partial class GameStateMachine : MonoBehaviour
 			{
                 // Destroy caravans through the spawner
                 GameManager.instance.caravanSpanwer.DestroyCaravans();
+				GameManager.instance.caravanSpanwer = null;
                 owner.GoToState("ShowRaceResults");
 			}
 		}

@@ -22,7 +22,8 @@ public partial class GameStateMachine : MonoBehaviour
 
             GameManager.instance.racingUI.GetComponent<RacingUI>().DisableCountDown();
 
-            // Spawn caravans
+			// Find caravan spawner and Spawn caravans
+			GameManager.instance.caravanSpanwer = GameObject.FindObjectOfType<CaravanSpawner>();
             GameManager.instance.caravanSpanwer.Initialize();
 
             OnSetupFinished();
