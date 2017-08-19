@@ -1,0 +1,517 @@
+fileFormatVersion: 2
+guid: d6bf8b2fecfcfd54da6a24ecfacfa8e7
+timeCreated: 1503171197
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Body
+    100004: Bottle1
+    100006: Bottle2
+    100008: Bottle3
+    100010: Bottle4
+    100012: Bottle5
+    100014: Bottle6
+    100016: Bottle7
+    100018: Bottle8
+    100020: Cart
+    100022: Cart_Box01
+    100024: Cart_Box02
+    100026: Cart_Box1_Bottles
+    100028: Cart_CharacterAndBoxes
+    100030: Cart_CharacterRoot
+    100032: Cart_Hay01
+    100034: Cart_Hay02
+    100036: Cart_Pivot
+    100038: Cart_Root
+    100040: Cart_Wheel_BL
+    100042: Cart_Wheel_BR
+    100044: Cart_Wheel_FL
+    100046: Cart_Wheel_FR
+    100048: Character_Elbow_L
+    100050: Character_Elbow_R1
+    100052: Character_Foot_L
+    100054: Character_Foot_L1
+    100056: Character_Foot_L_End
+    100058: Character_Foot_L_End1
+    100060: Character_Hat
+    100062: Character_Hat_End
+    100064: Character_Head
+    100066: Character_Hips
+    100068: Character_Knee_L
+    100070: Character_Knee_L1
+    100072: Character_Leg_L
+    100074: Character_Leg_L1
+    100076: Character_LFinger1_01
+    100078: Character_LFinger1_02
+    100080: Character_LFinger1_End
+    100082: Character_LFinger2_01
+    100084: Character_LFinger2_02
+    100086: Character_LFinger2_End
+    100088: Character_LFinger3_01
+    100090: Character_LFinger3_02
+    100092: Character_LFinger3_End
+    100094: Character_LFinger4_01
+    100096: Character_LFinger4_02
+    100098: Character_LFinger4_End
+    100100: Character_LFinger5_01
+    100102: Character_LFinger5_02
+    100104: Character_LFinger5_End
+    100106: Character_Neck
+    100108: Character_RFinger1_01
+    100110: Character_RFinger1_02
+    100112: Character_RFinger1_End1
+    100114: Character_RFinger2_01
+    100116: Character_RFinger2_02
+    100118: Character_RFinger2_End1
+    100120: Character_RFinger3_01
+    100122: Character_RFinger3_02
+    100124: Character_RFinger3_End1
+    100126: Character_RFinger4_01
+    100128: Character_RFinger4_02
+    100130: Character_RFinger4_End1
+    100132: Character_RFinger5_01
+    100134: Character_RFinger5_02
+    100136: Character_RFinger5_End1
+    100138: Character_Shoulder_L
+    100140: Character_Shoulder_R1
+    100142: Character_Spine01
+    100144: Character_Spine02
+    100146: Character_Spine03
+    100148: Character_Wrist_L
+    100150: Character_Wrist_R1
+    100152: CowboyHat
+    100154: Crate1
+    100156: Crate2
+    100158: Crate3
+    100160: FootRest
+    100162: pCube13
+    100164: pCube14
+    100166: pCube15
+    100168: pCube16
+    100170: pCube22
+    100172: Wheel_BL
+    100174: Wheel_BR
+    100176: Wheel_FL
+    100178: Wheel_FR
+    100180: Wheels
+    400000: //RootNode
+    400002: Body
+    400004: Bottle1
+    400006: Bottle2
+    400008: Bottle3
+    400010: Bottle4
+    400012: Bottle5
+    400014: Bottle6
+    400016: Bottle7
+    400018: Bottle8
+    400020: Cart
+    400022: Cart_Box01
+    400024: Cart_Box02
+    400026: Cart_Box1_Bottles
+    400028: Cart_CharacterAndBoxes
+    400030: Cart_CharacterRoot
+    400032: Cart_Hay01
+    400034: Cart_Hay02
+    400036: Cart_Pivot
+    400038: Cart_Root
+    400040: Cart_Wheel_BL
+    400042: Cart_Wheel_BR
+    400044: Cart_Wheel_FL
+    400046: Cart_Wheel_FR
+    400048: Character_Elbow_L
+    400050: Character_Elbow_R1
+    400052: Character_Foot_L
+    400054: Character_Foot_L1
+    400056: Character_Foot_L_End
+    400058: Character_Foot_L_End1
+    400060: Character_Hat
+    400062: Character_Hat_End
+    400064: Character_Head
+    400066: Character_Hips
+    400068: Character_Knee_L
+    400070: Character_Knee_L1
+    400072: Character_Leg_L
+    400074: Character_Leg_L1
+    400076: Character_LFinger1_01
+    400078: Character_LFinger1_02
+    400080: Character_LFinger1_End
+    400082: Character_LFinger2_01
+    400084: Character_LFinger2_02
+    400086: Character_LFinger2_End
+    400088: Character_LFinger3_01
+    400090: Character_LFinger3_02
+    400092: Character_LFinger3_End
+    400094: Character_LFinger4_01
+    400096: Character_LFinger4_02
+    400098: Character_LFinger4_End
+    400100: Character_LFinger5_01
+    400102: Character_LFinger5_02
+    400104: Character_LFinger5_End
+    400106: Character_Neck
+    400108: Character_RFinger1_01
+    400110: Character_RFinger1_02
+    400112: Character_RFinger1_End1
+    400114: Character_RFinger2_01
+    400116: Character_RFinger2_02
+    400118: Character_RFinger2_End1
+    400120: Character_RFinger3_01
+    400122: Character_RFinger3_02
+    400124: Character_RFinger3_End1
+    400126: Character_RFinger4_01
+    400128: Character_RFinger4_02
+    400130: Character_RFinger4_End1
+    400132: Character_RFinger5_01
+    400134: Character_RFinger5_02
+    400136: Character_RFinger5_End1
+    400138: Character_Shoulder_L
+    400140: Character_Shoulder_R1
+    400142: Character_Spine01
+    400144: Character_Spine02
+    400146: Character_Spine03
+    400148: Character_Wrist_L
+    400150: Character_Wrist_R1
+    400152: CowboyHat
+    400154: Crate1
+    400156: Crate2
+    400158: Crate3
+    400160: FootRest
+    400162: pCube13
+    400164: pCube14
+    400166: pCube15
+    400168: pCube16
+    400170: pCube22
+    400172: Wheel_BL
+    400174: Wheel_BR
+    400176: Wheel_FL
+    400178: Wheel_FR
+    400180: Wheels
+    4300000: Cart
+    4300002: pCube13
+    4300004: pCube14
+    4300006: pCube15
+    4300008: pCube16
+    4300010: FootRest
+    4300012: pCube22
+    4300014: Body
+    4300016: CowboyHat
+    4300018: Wheel_FR
+    4300020: Wheel_BL
+    4300022: Wheel_FL
+    4300024: Wheel_BR
+    4300026: Crate1
+    4300028: Crate2
+    4300030: Bottle1
+    4300032: Bottle2
+    4300034: Crate3
+    4300036: Bottle3
+    4300038: Bottle4
+    4300040: Bottle5
+    4300042: Bottle6
+    4300044: Bottle7
+    4300046: Bottle8
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Body
+    13700002: Bottle1
+    13700004: Bottle2
+    13700006: Bottle3
+    13700008: Bottle4
+    13700010: Bottle5
+    13700012: Bottle6
+    13700014: Bottle7
+    13700016: Bottle8
+    13700018: Cart
+    13700020: CowboyHat
+    13700022: Crate1
+    13700024: Crate2
+    13700026: Crate3
+    13700028: FootRest
+    13700030: pCube13
+    13700032: pCube14
+    13700034: pCube15
+    13700036: pCube16
+    13700038: pCube22
+    13700040: Wheel_BL
+    13700042: Wheel_BR
+    13700044: Wheel_FL
+    13700046: Wheel_FR
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/CowboyHat
+        weight: 1
+      - path: Bottle1
+        weight: 1
+      - path: Bottle2
+        weight: 1
+      - path: Bottle3
+        weight: 1
+      - path: Bottle4
+        weight: 1
+      - path: Bottle5
+        weight: 1
+      - path: Bottle6
+        weight: 1
+      - path: Bottle7
+        weight: 1
+      - path: Bottle8
+        weight: 1
+      - path: Cart
+        weight: 1
+      - path: Cart/FootRest
+        weight: 1
+      - path: Cart/FootRest/pCube22
+        weight: 1
+      - path: Cart/pCube13
+        weight: 1
+      - path: Cart/pCube14
+        weight: 1
+      - path: Cart/pCube15
+        weight: 1
+      - path: Cart/pCube16
+        weight: 1
+      - path: Cart_Root
+        weight: 1
+      - path: Cart_Root/Cart_Pivot
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_Box01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_Box01/Cart_Box1_Bottles
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_Box02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips/Character_Leg_L
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips/Character_Leg_L/Character_Knee_L
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips/Character_Leg_L/Character_Knee_L/Character_Foot_L
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips/Character_Leg_L/Character_Knee_L/Character_Foot_L/Character_Foot_L_End
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips/Character_Leg_L1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips/Character_Leg_L1/Character_Knee_L1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips/Character_Leg_L1/Character_Knee_L1/Character_Foot_L1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Hips/Character_Leg_L1/Character_Knee_L1/Character_Foot_L1/Character_Foot_L_End1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Neck
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Neck/Character_Head
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Neck/Character_Head/Character_Hat
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Neck/Character_Head/Character_Hat/Character_Hat_End
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger1_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger1_01/Character_LFinger1_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger1_01/Character_LFinger1_02/Character_LFinger1_End
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger2_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger2_01/Character_LFinger2_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger2_01/Character_LFinger2_02/Character_LFinger2_End
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger3_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger3_01/Character_LFinger3_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger3_01/Character_LFinger3_02/Character_LFinger3_End
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger4_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger4_01/Character_LFinger4_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger4_01/Character_LFinger4_02/Character_LFinger4_End
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger5_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger5_01/Character_LFinger5_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_L/Character_Elbow_L/Character_Wrist_L/Character_LFinger5_01/Character_LFinger5_02/Character_LFinger5_End
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger1_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger1_01/Character_RFinger1_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger1_01/Character_RFinger1_02/Character_RFinger1_End1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger2_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger2_01/Character_RFinger2_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger2_01/Character_RFinger2_02/Character_RFinger2_End1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger3_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger3_01/Character_RFinger3_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger3_01/Character_RFinger3_02/Character_RFinger3_End1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger4_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger4_01/Character_RFinger4_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger4_01/Character_RFinger4_02/Character_RFinger4_End1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger5_01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger5_01/Character_RFinger5_02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_CharacterRoot/Character_Spine01/Character_Spine02/Character_Spine03/Character_Shoulder_R1/Character_Elbow_R1/Character_Wrist_R1/Character_RFinger5_01/Character_RFinger5_02/Character_RFinger5_End1
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_Hay01
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_CharacterAndBoxes/Cart_Hay02
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_Wheel_BL
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_Wheel_BR
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_Wheel_FL
+        weight: 1
+      - path: Cart_Root/Cart_Pivot/Cart_Wheel_FR
+        weight: 1
+      - path: Crate1
+        weight: 1
+      - path: Crate2
+        weight: 1
+      - path: Crate3
+        weight: 1
+      - path: Wheels
+        weight: 1
+      - path: Wheels/Wheel_BL
+        weight: 1
+      - path: Wheels/Wheel_BR
+        weight: 1
+      - path: Wheels/Wheel_FL
+        weight: 1
+      - path: Wheels/Wheel_FR
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
