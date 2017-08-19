@@ -6,20 +6,15 @@ public class MotionControl : MonoBehaviour {
 	float currentSpeed = 0.0f;
 
 	[SerializeField]
-	float maxSpeed = 10.0f, acceleration = 1.0f, deceleration = 5.0f, rotateSpeed = 30.0f, groundedDistance = 1.0f;
-	[SerializeField]
-	float upFixRotationSpeed = 0.6f;
-
-	float raycastDelay = 0.2f;
-	float timeSinceLastRaycast = 0.0f;
+	float maxSpeed = 10.0f, acceleration = 1.0f, deceleration = 5.0f, rotateSpeed = 30.0f;
 
 	Vector3 targetMoveDirection;
-	Vector3 floorUpVector;
-
-	bool grounded = false;
+	
 
 	[SerializeField]
 	CharacterController movementController;
+	[SerializeField]
+	AlignToFloor floorChecker;
 
 	/// <summary>
 	/// Takes a normalized direction relative to forward (yaxis +1) as the new direction in which to accelerate.
@@ -29,31 +24,10 @@ public class MotionControl : MonoBehaviour {
 		targetMoveDirection = direction;
 	}
 
-	public void SetNewTargetUpVector(Vector3 up)
-	{
-		floorUpVector = up;
-	}
-
-	public void SetGrounded(bool grounded)
-	{
-		this.grounded = grounded;
-	}
-
 	void Update()
 	{
 
-		// raycast to check distance to ground for grounded and check normal up
-		if((timeSinceLastRaycast += Time.deltaTime) > raycastDelay)
-		{
-			RaycastHit hit = new RaycastHit();
-			Physics.Raycast(transform.position, -transform.up, out hit, 4.0f);
-			Debug.DrawRay(transform.position, -transform.up);
-			floorUpVector = hit.normal;
-			grounded = hit.distance <= groundedDistance;
-			timeSinceLastRaycast = 0;
-		}
-
-		if (grounded) // Adjust speed and rotation from control while on ground
+		if (floorChecker.IsGrounded()) // Adjust speed and rotation from control while on ground
 		{
 			if (targetMoveDirection != Vector3.zero)
 			{
@@ -73,12 +47,6 @@ public class MotionControl : MonoBehaviour {
 			
 		// update every frame for gravity
 		movementController.SimpleMove(transform.TransformDirection(Vector3.forward).normalized * currentSpeed);
-		
-		// fix chariot up rotation
-		if(floorUpVector != transform.up)
-		{
-			transform.up = Vector3.RotateTowards(transform.up, floorUpVector, upFixRotationSpeed * Time.deltaTime, 200);
-		}
 		
 	}
 }
