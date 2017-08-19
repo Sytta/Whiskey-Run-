@@ -10,7 +10,7 @@ public class AbilityController : MonoBehaviour
 	private List<Ability> abilities;
 
     // Reference to Playerinfo's ability selection
-    Dictionary<BaseAbility, Input> abilitySelection;
+	Dictionary<Input, BaseAbilityComponent> abilitySelection;
 
     // Create all the abilities and call on setup on each of them
     void Setup() { }

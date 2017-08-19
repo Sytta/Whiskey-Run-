@@ -7,6 +7,6 @@ public class PlayerInfo : MonoBehaviour {
     string id;
     int money;
     // Key mapping for abilities
-    Dictionary<BaseAbility, Input> abilitySelection;
+	Dictionary<Input, BaseAbilityComponent> abilitySelection;
     ArrayList crates;
 }
