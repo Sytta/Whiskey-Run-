@@ -7,11 +7,19 @@ public class NitroComponent : BaseAbilityComponent
 
 	public override void Use(Vector3 direction)
 	{
+		// Failsafe
+		if (currentCoolDownTimer != 0)
+		{
+			Debug.Log ("Oops! Please wait cooldown to use nitro...");
+			return;
+		}
+
 		Debug.Log ("Using nitro!");
+
+		currentCoolDownTimer = CoolDown;
+		StartCoroutine (CoolDownTimer());
 	}
 
 	public override bool IsReady() { return false; }
-
-	public override float GetCoolDown() { return 0.0f; }
 }
 

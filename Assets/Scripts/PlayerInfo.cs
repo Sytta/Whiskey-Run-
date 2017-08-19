@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo : MonoBehaviour {
-
+public class PlayerInfo
+{
     string id;
     int money;
-    // Key mapping for abilities
-	Dictionary<Input, BaseAbilityComponent> abilitySelection;
     ArrayList crates;
+
+	void Start()
+	{
+	}
 }

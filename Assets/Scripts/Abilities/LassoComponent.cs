@@ -7,11 +7,19 @@ public class LassoComponent : BaseAbilityComponent
 
 	public override void Use(Vector3 direction)
 	{
-		Debug.Log ("Using Lasso!");
+		// Failsafe
+		if (currentCoolDownTimer != 0)
+		{
+			Debug.Log ("Oops! Please wait cooldown to use lasso...");
+			return;
+		}
+
+		Debug.Log ("Using lasso!");
+
+		currentCoolDownTimer = CoolDown;
+		StartCoroutine (CoolDownTimer());
 	}
 
 	public override bool IsReady() { return false; }
-
-	public override float GetCoolDown() { return 0.0f; }
 }
 
