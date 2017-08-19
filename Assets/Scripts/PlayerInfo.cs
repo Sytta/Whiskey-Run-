@@ -24,6 +24,11 @@ public class PlayerInfo
     public void SetAbilityController(AbilityController ab)
     {
         abilityController = ab;
+
+		// Debugging
+		PurchaseAbility ("Nitro", "X");
+
+		abilityController.SetUpAbilities (abilitiesInputMapping);
     }
 
 }
