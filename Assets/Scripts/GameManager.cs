@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] public List<Ability> AbilitiesDatabase;
 
-    public static GameManager instance;
+    public static GameManager instance = null;
 
      //Awake is always called before any Start functions
         void Awake()
@@ -30,10 +30,10 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         //Call the InitGame function to initialize the first level 
-        //InitGame();
+        InitGame();
     }
 
-    void Start()
+    void InitGame()
 	{
 		players = new PlayerInfo[nbPlayers];
 
