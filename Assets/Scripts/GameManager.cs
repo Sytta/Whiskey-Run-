@@ -10,12 +10,10 @@ public class GameManager : MonoBehaviour
 	[SerializeField] public List<Ability> AbilitiesDatabase;
 
 	[SerializeField] public GameStateMachine GameStateMachine;
-
     [SerializeField] public CaravanSpawner caravanSpanwer;
+	[SerializeField] public PrefabManager PrefabManager;
 
-	[SerializeField] public GameObject mainMenuPrefab;
 
-    [SerializeField] public GameObject racingUIPrefab;
     [HideInInspector] public GameObject racingUI;
 
     public static GameManager instance = null;
@@ -53,5 +51,13 @@ public class GameManager : MonoBehaviour
 
 		GameStateMachine.Init ();
 	}
+
+   public void UpdatePlayerInfo()
+    {
+        for (int i = 0; i < nbPlayers; i++)
+        {
+            //players[i].nbCrates = caravanSpanwer.caravans[i].crates.Count;
+        }
+    }
 }
 
