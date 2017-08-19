@@ -12,6 +12,7 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnEnter()
 		{
             Debug.Log("Going from Tutorial to RaceSetup");
+            owner.currentState = this;
             // Show the tutorial
             OnClickedPlay();
         }

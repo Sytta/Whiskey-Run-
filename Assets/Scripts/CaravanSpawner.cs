@@ -52,7 +52,7 @@ public class CaravanSpawner : MonoBehaviour
         caravans.Add(SpawnCaravan(SpawnPoints[1].transform, 2));
 	}
 
-     void OnDestroy()
+     public void DestroyCaravans()
     {
         for (int i = 0; i < caravans.Count; i ++)
         {

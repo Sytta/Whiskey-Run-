@@ -12,6 +12,7 @@ public partial class GameStateMachine : MonoBehaviour
         public override void OnEnter()
         {
             // Show the tutorial
+            owner.currentState = this;
             OnClickedPlay();
         }
 

@@ -15,6 +15,7 @@ public partial class GameStateMachine : MonoBehaviour
 		{
             Debug.Log("Setting up scene");
             // Ready level
+            owner.currentState = this;
 
             // Show Racing UI
             GameManager.instance.racingUI = Instantiate(GameManager.instance.racingUIPrefab);

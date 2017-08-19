@@ -14,8 +14,9 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public override void OnEnter()
 		{
-			// Show rounds summary
-		}
+            owner.currentState = this;
+            // Show rounds summary
+        }
 
 		public override void OnExit()
 		{
