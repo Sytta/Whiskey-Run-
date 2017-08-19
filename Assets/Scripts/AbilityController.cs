@@ -52,7 +52,7 @@ public class AbilityController : MonoBehaviour
 			}
 		}
 
-		foreach (BaseAbilityComponent component in abilitiesComponents)
+		foreach (BaseAbilityComponent component in abilitiesComponents.Values)
 		{
 			component.OnSetup ();
 		}

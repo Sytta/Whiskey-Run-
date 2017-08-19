@@ -23,7 +23,7 @@ public class ShopController : MonoBehaviour
 				item.GetComponent<ShopItem> ().SetDescription (database.Abilities [j].Description);
 				item.GetComponent<Button> ().onClick.AddListener (delegate
 				{
-					PurchaseItem (database.Abilities [abilityIndex].Name, playerId);
+					PurchaseItem (playerId, database.Abilities [abilityIndex].Name, "");
 				});
 			}
 		}
