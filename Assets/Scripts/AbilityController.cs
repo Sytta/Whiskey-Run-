@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class AbilityController : MonoBehaviour
 {
-	[SerializeField] private Button testButton;
-	[SerializeField] private AbilitiesDatabase database;
-	//[SerializeField] private List<Ability> abilities;
-
 	Dictionary<string, string> abilitiesInputMapping;
     // Reference to Playerinfo's ability selection
 	Dictionary<string, BaseAbilityComponent> abilitiesComponents;
@@ -37,11 +33,36 @@ public class AbilityController : MonoBehaviour
 		abilitiesInputMapping.Add (input, name);
 	}
 
+	public void SetUpAbilities(Dictionary<string, string> abilitiesMapping)
+	{
+		if (abilitiesComponents == null)
+			abilitiesComponents = new Dictionary<string, BaseAbilityComponent> ();
+		
+		foreach (string ability in abilitiesMapping.Values)
+		{
+			Ability abil = GameManager.instance.AbilitiesDatabase.Find (x => x.Name == ability);
+			Debug.Log (abilitiesComponents);
+			if (ability != null)
+			{
+				abilitiesComponents.Add(ability, abil.CreateComponent (this.gameObject));
+			}
+			else
+			{
+				Debug.Log ("Error : Couldn't find ability");
+			}
+		}
+
+		foreach (BaseAbilityComponent component in abilitiesComponents.Values)
+		{
+			component.OnSetup ();
+		}
+	}
+		
 	public void SetUpAbilities()
 	{
 		foreach (string ability in abilitiesInputMapping.Values)
 		{
-			Ability abil = database.Abilities.Find (x => x.Name == name);
+			Ability abil = GameManager.instance.AbilitiesDatabase.Find (x => x.Name == name);
 			if (ability != null)
 			{
 				abilitiesComponents.Add(ability, abil.CreateComponent (this.gameObject));

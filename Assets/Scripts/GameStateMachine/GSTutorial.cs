@@ -11,8 +11,10 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public override void OnEnter()
 		{
-			// Show the tutorial
-		}
+            Debug.Log("Going from Tutorial to RaceSetup");
+            // Show the tutorial
+            OnClickedPlay();
+        }
 
 		public override void OnExit()
 		{
@@ -26,7 +28,7 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public void OnClickedPlay()
 		{
-			owner.GoToState("RaceSetup");
+			owner.GoToState("SetupRace");
 		}
 	}
 }

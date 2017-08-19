@@ -31,8 +31,8 @@ public class AlignToFloor : MonoBehaviour {
 		// fix object up rotation
 		if (performAlignment && (floorUpVector != transform.up))
 		{
-			transform.up = Vector3.RotateTowards(transform.up, floorUpVector, upFixRotationSpeed * Time.deltaTime, 200);
-		}
+            //transform.rotation = Quaternion.FromToRotation(transform.up, floorUpVector);
+        }
 	}
 	
 }
