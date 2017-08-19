@@ -27,6 +27,9 @@ public class CaravanSpawner : MonoBehaviour {
         newCaravan.transform.rotation.Set(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
 
         GameManager.instance.players[playerId - 1].SetAbilityController(newCaravan.GetComponent<AbilityController>());
+
+        // Disable input
+        newCaravan.GetComponent<CaravanInput>().DisableInput();
         
         return newCaravan;
     }
@@ -44,6 +47,14 @@ public class CaravanSpawner : MonoBehaviour {
         for (int i = 0; i < caravans.Count; i ++)
         {
             Destroy(caravans[i]);
+        }
+    }
+
+    public void EnableCaravanInput()
+    {
+        for (int i = 0; i < 2; i ++)
+        {
+            caravans[i].GetComponent<CaravanInput>().EnableInput();
         }
     }
 }

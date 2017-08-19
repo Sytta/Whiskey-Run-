@@ -15,7 +15,8 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnEnter()
 		{
 			numberOfPlayersFinished = 0;
-			// Enable playerInput
+            // Enable playerInput
+            GameManager.instance.caravanSpanwer.EnableCaravanInput();
 		}
 
 		public override void OnExit()

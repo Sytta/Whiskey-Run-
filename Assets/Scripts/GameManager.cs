@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public CaravanSpawner caravanSpanwer;
 
-    [SerializeField] public GameObject racingUI;
+    [SerializeField] public GameObject racingUIPrefab;
+
+    [HideInInspector] public GameObject racingUI;
 
     public static GameManager instance = null;
 

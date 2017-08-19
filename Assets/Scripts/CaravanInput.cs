@@ -23,4 +23,14 @@ public class CaravanInput : MonoBehaviour {
 		// take input movement
 		motionControl.AccelerateToward(new Vector3(Input.GetAxis("Horizontal" + playerInputSuffix), 0, Input.GetAxis("Vertical" + playerInputSuffix)).normalized);
 	}
+
+    public void DisableInput()
+    {
+        this.enabled = false;
+    }
+
+    public void EnableInput()
+    {
+        this.enabled = true;
+    }
 }

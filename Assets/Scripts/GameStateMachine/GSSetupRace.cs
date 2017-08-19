@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public partial class GameStateMachine : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public partial class GameStateMachine : MonoBehaviour
             // Ready level
 
             // Show Racing UI
-            Instantiate(GameManager.instance.racingUI);
+            GameManager.instance.racingUI = Instantiate(GameManager.instance.racingUIPrefab);
+
+            GameManager.instance.racingUI.GetComponent<RacingUI>().DisableCountDown();
 
             // Spawn caravans
             GameManager.instance.caravanSpanwer.Initialize();

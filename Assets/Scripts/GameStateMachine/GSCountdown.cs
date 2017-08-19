@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public partial class GameStateMachine : MonoBehaviour
 {
@@ -9,14 +10,23 @@ public partial class GameStateMachine : MonoBehaviour
 	{
 		private float timeLeft = 0.0f;
 
+        private RacingUI racingUI;
+
 		public GSCountdown(GameStateMachine owner) : base(owner) { }
 
 		public override void OnEnter()
 		{
 			timeLeft = 4.0f;
-			// Start countdown
+            // Start countdown
+            racingUI = GameManager.instance.racingUI.GetComponent<RacingUI>();
+            racingUI.InitCountDown(timeLeft.ToString());
 
-		}
+        }
+
+        public void FixedUpdate()
+        {
+            OnUpdate(Time.deltaTime);
+        }
 
 		public override void OnExit()
 		{
@@ -26,15 +36,19 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnUpdate(float deltaTime)
 		{
 			// update seconds left and UI?
-			if ((timeLeft -= deltaTime) <= 0)
+			if ((timeLeft -= deltaTime) <= 1)
 			{
 				OnCountdownExpired();
 			}
-		}
+
+            racingUI.SetCountDown(((int)timeLeft).ToString());
+
+        }
 
 		public void OnCountdownExpired()
 		{
-			owner.GoToState("InRace");
+            racingUI.DisableCountDown();
+            owner.GoToState("InRace");
 		}
 	}
 }
