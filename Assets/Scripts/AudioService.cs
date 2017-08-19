@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioService : MonoBehaviour {
 	[SerializeField]
-	AudioSource audioSource;
+	AudioSource musicSource;
 	[SerializeField]
 	AudioClip RaceMusic, MenuMusic;
 	bool fadingIn;
@@ -31,17 +31,17 @@ public class AudioService : MonoBehaviour {
 				selectedClip = RaceMusic;
 				break;
 		}
-		if(selectedClip != null && audioSource.clip != selectedClip)
+		if(selectedClip != null && musicSource.clip != selectedClip)
 		{
 			nextClip = selectedClip;
 		}
-		audioSource.clip = selectedClip;
-		audioSource.Play();
+		musicSource.clip = selectedClip;
+		musicSource.Play();
 	}
 
 	// Use this for initialization
 	void Start () {
-		PlayMusic("menu");
+		PlayMusic("race");
 	}
 	
 	// Update is called once per frame
@@ -49,19 +49,20 @@ public class AudioService : MonoBehaviour {
 		if(nextClip != null)
 		{
 			//lowerVolume till nill
-			if ((audioSource.volume -= fadeSpeed * Time.deltaTime) == 0)
+			if ((musicSource.volume -= fadeSpeed * Time.deltaTime) <= 0)
 			{
+				musicSource.clip = nextClip;
+				musicSource.Play();
+				nextClip = null;
 				fadingIn = true;
-				audioSource.clip = nextClip;
-				audioSource.Play();
 			}
 		}
 		if (fadingIn)
 		{
 			//raise volume till full
-			if ((audioSource.volume += fadeSpeed * Time.deltaTime)==1)
+			if ((musicSource.volume += fadeSpeed * Time.deltaTime)==1)
 			{
-				nextClip = null;
+				fadingIn = false;
 			}
 		}
 	}
