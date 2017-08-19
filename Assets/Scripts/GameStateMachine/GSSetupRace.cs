@@ -14,6 +14,10 @@ public partial class GameStateMachine : MonoBehaviour
 		{
             Debug.Log("Setting up scene");
             // Ready level
+
+            // Show Racing UI
+            Instantiate(GameManager.instance.racingUI);
+
             // Spawn caravans
             GameManager.instance.caravanSpanwer.Initialize();
 
