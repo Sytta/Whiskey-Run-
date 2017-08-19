@@ -31,7 +31,7 @@ public partial class GameStateMachine : MonoBehaviour
 			// if so
 			if (true /* replace with rounds left condition*/)
 			{
-				owner.GoToState("SetupRace");
+				owner.GoToState("UpgradesMenu");
 			}
 			else
 			{
