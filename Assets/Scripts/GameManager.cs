@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public CaravanSpawner caravanSpanwer;
 
+    [SerializeField] public GameObject RacingUI;
+
     public static GameManager instance = null;
 
     //Awake is always called before any Start functions
