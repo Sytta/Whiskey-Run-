@@ -7,7 +7,7 @@ public class PlayerInfo
     public int id { get; set; }
     public int money { get; set; }
     public int nbCrates { get; set; }
-    public Dictionary<string, string> abilitiesInputMapping;
+    public Dictionary<string, int> Abilities;
     AbilityController abilityController;
 
 	public PlayerInfo(int id, int money, int nbCrates)
@@ -15,13 +15,20 @@ public class PlayerInfo
         this.id = id;
         this.money = money;
         this.nbCrates = nbCrates;
-		abilitiesInputMapping = new Dictionary<string, string> ();
-    }
+		Abilities = new Dictionary<string, int> ();
+	}
 
-	public void PurchaseAbility (string ability, string input)
+	public void PurchaseAbility (string ability)
 	{
 		money -= GameManager.instance.AbilitiesDatabase.Find(x => x.name == ability).Cost;
-		abilitiesInputMapping.Add (input, ability);
+		if (Abilities.ContainsKey (ability))
+		{
+			Abilities [ability]++;
+		}
+		else
+		{
+			Abilities.Add (ability, 1);
+		}
 	}
 
     public void SetAbilityController(AbilityController ab)
@@ -29,9 +36,9 @@ public class PlayerInfo
         abilityController = ab;
 
 		// Debugging
-		PurchaseAbility ("Nitro", "X");
+		PurchaseAbility ("Nitro");
 
-		abilityController.SetUpAbilities (abilitiesInputMapping);
+		abilityController.SetUpAbilities (Abilities);
     }
 
 }
