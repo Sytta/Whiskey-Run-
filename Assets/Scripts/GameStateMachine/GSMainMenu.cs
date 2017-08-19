@@ -19,11 +19,10 @@ public partial class GameStateMachine : MonoBehaviour
             /*Debug.Log("Going from MainMenu to Tutorial");
             OnClickedPlay();*/
             owner.currentState = this;
-            GameObject mainMenu = Instantiate (GameManager.instance.mainMenuPrefab);
+            GameObject mainMenu = Instantiate(GameManager.instance.PrefabManager.MainMenuPrefab);
             startGame = mainMenu.GetComponentInChildren<Button>();
             startGame.onClick.AddListener(OnClickedPlay);
             Debug.Log("In main menu");
-            
         }
 
 		public override void OnExit()

@@ -18,7 +18,7 @@ public partial class GameStateMachine : MonoBehaviour
             owner.currentState = this;
 
             // Show Racing UI
-            GameManager.instance.racingUI = Instantiate(GameManager.instance.racingUIPrefab);
+			GameManager.instance.racingUI = Instantiate(GameManager.instance.PrefabManager.RacingUI);
 
             GameManager.instance.racingUI.GetComponent<RacingUI>().DisableCountDown();
 

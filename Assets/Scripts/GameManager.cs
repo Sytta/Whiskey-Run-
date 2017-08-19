@@ -10,12 +10,10 @@ public class GameManager : MonoBehaviour
 	[SerializeField] public List<Ability> AbilitiesDatabase;
 
 	[SerializeField] public GameStateMachine GameStateMachine;
-
     [SerializeField] public CaravanSpawner caravanSpanwer;
+	[SerializeField] public PrefabManager PrefabManager;
 
-	[SerializeField] public GameObject mainMenuPrefab;
 
-    [SerializeField] public GameObject racingUIPrefab;
     [HideInInspector] public GameObject racingUI;
 
     public static GameManager instance = null;
