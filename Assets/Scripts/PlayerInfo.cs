@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerInfo
 {
-    string id;
-    int money;
-    ArrayList crates;
+    public int id { get; set; }
+    public int money { get; set; }
+    public int nbCrates { get; set; }
     public Dictionary<string, string> abilitiesInputMapping;
     AbilityController abilityController;
 
-	public PlayerInfo()
+	public PlayerInfo(int id, int money, int nbCrates)
 	{
+        this.id = id;
+        this.money = money;
+        this.nbCrates = nbCrates;
 		abilitiesInputMapping = new Dictionary<string, string> ();
-	}
+    }
 
 	public void PurchaseAbility (string ability, string input)
 	{
