@@ -9,13 +9,6 @@ public class CaravanInput : MonoBehaviour {
 
 	string playerInputSuffix;
 
-	/*************************************DELETE THIS AFTER... TESTING ONLY ********************************/
-	private void Start()
-	{
-		// set player one on start until chariot spawn implemented
-		SetPlayer(1);
-	}
-
 	public void SetPlayer(int playerNumber)
 	{
 		if (playerNumber < 1)
