@@ -7,7 +7,7 @@ public class PlayerInfo
     string id;
     int money;
     ArrayList crates;
-	Dictionary<string, string> abilitiesInputMapping;
+    public Dictionary<string, string> abilitiesInputMapping;
     AbilityController abilityController;
 
 	public PlayerInfo()
