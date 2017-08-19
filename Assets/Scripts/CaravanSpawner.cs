@@ -71,4 +71,9 @@ public class CaravanSpawner : MonoBehaviour
             caravans[i].GetComponent<CaravanInput>().EnableInput();
         }
     }
+
+    public void DisableCaravanInput(int playerId)
+    {
+        caravans[playerId].GetComponent<CaravanInput>().DisableInput();
+    }
 }

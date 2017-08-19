@@ -51,6 +51,10 @@ public partial class GameStateMachine : MonoBehaviour
                 // If the other player hasn't finished
                 if (!playerFinished[(player + 1) % 2])
                 {
+                    // Disable player caravan input
+                    GameManager.instance.caravanSpanwer.DisableCaravanInput(player);
+
+                    // Set Winner / Looser
                     GameManager.instance.players[player].isWinner = true;
                     GameManager.instance.players[(player + 1) % 2].isWinner = false;
                     Debug.Log("The winner is player " + (player + 1));
