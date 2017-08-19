@@ -7,27 +7,36 @@ using UnityEngine.UI;
 public class AbilityController : MonoBehaviour
 {
 	[SerializeField] private Button testButton;
-	private List<Ability> abilities;
+	[SerializeField] private AbilitiesDatabase database;
+	//[SerializeField] private List<Ability> abilities;
 
     // Reference to Playerinfo's ability selection
-	Dictionary<Input, BaseAbilityComponent> abilitySelection;
+	Dictionary<string, BaseAbilityComponent> abilitySelection;
 
     // Create all the abilities and call on setup on each of them
     void Setup() { }
 
 	void Start()
 	{
+		abilitySelection = new Dictionary<string, BaseAbilityComponent> ();
 		testButton.onClick.AddListener (delegate { AddAbility(testButton.gameObject.name); });
-		abilities = new List<Ability> ();
-		abilities.Add ((Lasso)ScriptableObject.CreateInstance (typeof(Lasso)));
+	}
+
+	void Update()
+	{
+		float verticalInput = Input.GetAxisRaw ("Vertical");
+		if (verticalInput != 0)
+		{
+			abilitySelection ["Vertical"].Use (new Vector3 (0.0f, 0.0f, 0.0f));
+		}
 	}
 
 	void AddAbility(string name)
 	{
-		Ability ability = abilities.Find (x => x.Name == "Lasso");
+		Ability ability = database.Abilities.Find (x => x.Name == "Lasso");
 		if (ability != null)
 		{
-			ability.Initialize (this.gameObject);
+			abilitySelection.Add("Vertical", ability.CreateComponent (this.gameObject));
 		}
 		else
 		{

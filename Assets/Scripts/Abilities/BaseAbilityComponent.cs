@@ -3,12 +3,18 @@ using UnityEngine;
 
 public class BaseAbilityComponent : MonoBehaviour
 {
-	void OnSetup() { }
+	[HideInInspector] public string Name { get; set; }
+	[HideInInspector] public float Cost { get; set; }
+	[HideInInspector] public Sprite Image { get; set; }
+	[HideInInspector] public AudioClip Sound { get; set; }
+	[HideInInspector] public float CoolDown { get; set; }
 
-	void Use(Vector3 direction) { }
+	public virtual void OnSetup() { }
 
-	bool IsReady() { return false; }
+	public virtual void Use(Vector3 direction) { }
 
-	float GetCoolDown() { return 0.0f; }
+	public virtual bool IsReady() { return false; }
+
+	public virtual float GetCoolDown() { return 0.0f; }
 }
 
