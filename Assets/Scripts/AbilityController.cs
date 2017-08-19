@@ -10,37 +10,46 @@ public class AbilityController : MonoBehaviour
 	[SerializeField] private AbilitiesDatabase database;
 	//[SerializeField] private List<Ability> abilities;
 
+	Dictionary<string, string> abilitiesInputMapping;
     // Reference to Playerinfo's ability selection
-	Dictionary<string, BaseAbilityComponent> abilitySelection;
-
-    // Create all the abilities and call on setup on each of them
-    void Setup() { }
+	Dictionary<string, BaseAbilityComponent> abilitiesComponents;
 
 	void Start()
 	{
-		abilitySelection = new Dictionary<string, BaseAbilityComponent> ();
-		testButton.onClick.AddListener (delegate { AddAbility(testButton.gameObject.name); });
+		abilitiesInputMapping = new Dictionary<string, string> ();
+		abilitiesComponents = new Dictionary<string, BaseAbilityComponent> ();
 	}
 
-	void Update()
+    // Create all the abilities and call on setup on each of them
+    void Setup()
 	{
-		float verticalInput = Input.GetAxisRaw ("Vertical");
-		if (verticalInput != 0)
-		{
-			abilitySelection ["Vertical"].Use (new Vector3 (0.0f, 0.0f, 0.0f));
-		}
+		
 	}
 
-	void AddAbility(string name)
+	public void AddAbility(string name, string input = "")
 	{
-		Ability ability = database.Abilities.Find (x => x.Name == "Nitro");
-		if (ability != null)
+		if (abilitiesInputMapping.ContainsKey (input))
 		{
-			abilitySelection.Add("Vertical", ability.CreateComponent (this.gameObject));
+			Debug.Log ("Error : Input is already associated with an ability");
+			return;
 		}
-		else
+
+		abilitiesInputMapping.Add (input, name);
+	}
+
+	public void SetUpAbilities()
+	{
+		foreach (string ability in abilitiesInputMapping.Values)
 		{
-			Debug.Log ("Error : Couldn't find ability");
+			Ability abil = database.Abilities.Find (x => x.Name == name);
+			if (ability != null)
+			{
+				abilitiesComponents.Add(ability, abil.CreateComponent (this.gameObject));
+			}
+			else
+			{
+				Debug.Log ("Error : Couldn't find ability");
+			}
 		}
 	}
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ability : ScriptableObject
 {
 	public string Name;
+	public string Description;
 	public float Cost;
 	public Sprite Image;
 	public AudioClip Sound;

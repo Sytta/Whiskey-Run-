@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class BaseAbilityComponent : MonoBehaviour
@@ -8,6 +9,7 @@ public class BaseAbilityComponent : MonoBehaviour
 	[HideInInspector] public Sprite Image { get; set; }
 	[HideInInspector] public AudioClip Sound { get; set; }
 	[HideInInspector] public float CoolDown { get; set; }
+	protected float currentCoolDownTimer;
 
 	public virtual void OnSetup() { }
 
@@ -15,6 +17,15 @@ public class BaseAbilityComponent : MonoBehaviour
 
 	public virtual bool IsReady() { return false; }
 
-	public virtual float GetCoolDown() { return 0.0f; }
+	public virtual float GetCoolDown() { return currentCoolDownTimer; }
+
+	protected IEnumerator CoolDownTimer()
+	{
+		while (currentCoolDownTimer != 0.0f)
+		{
+			yield return new WaitForSecondsRealtime (1.0f);
+			currentCoolDownTimer--;
+		}
+	}
 }
 
