@@ -33,7 +33,7 @@ public class AbilityController : MonoBehaviour
 
 	void AddAbility(string name)
 	{
-		Ability ability = database.Abilities.Find (x => x.Name == "Lasso");
+		Ability ability = database.Abilities.Find (x => x.Name == "Nitro");
 		if (ability != null)
 		{
 			abilitySelection.Add("Vertical", ability.CreateComponent (this.gameObject));

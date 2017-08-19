@@ -5,8 +5,6 @@ using UnityEngine;
 public class AbilitiesDatabase : MonoBehaviour
 {
 	[SerializeField] public List<Ability> Abilities;
-
-
 }
 
 
