@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
 
-     //Awake is always called before any Start functions
-        void Awake()
+    //Awake is always called before any Start functions
+	void Awake()
     {
         //Check if instance already exists
         if (instance == null)

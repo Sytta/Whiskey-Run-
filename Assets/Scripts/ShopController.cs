@@ -19,6 +19,7 @@ public class ShopController : MonoBehaviour
 				int abilityIndex = j;
 
 				GameObject item = Instantiate (shopItemPrefab, playerShop [i].transform);
+				item.name = database.Abilities [j].Name;
 
 				item.GetComponent<ShopItem> ().SetInfo
 				(
@@ -40,6 +41,16 @@ public class ShopController : MonoBehaviour
 	{
 		Debug.Log ("Purchased " + ability + " by player " + playerId);
 		GameManager.instance.players [playerId].PurchaseAbility (ability, input);
+	}
+		
+	public void OpenPanel()
+	{
+		this.gameObject.SetActive (true);
+	}
+
+	public void ClosePanel()
+	{
+		this.gameObject.SetActive (false);
 	}
 }
 
