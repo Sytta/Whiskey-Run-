@@ -40,5 +40,10 @@ public class PlayerInfo
 		ab.PlayerId = id;
 		abilityController.SetUpAbilities (Abilities);
     }
+
+	public void ResetCrates()
+	{
+		Abilities ["Crate"] = 0;
+	}
 		
 }
