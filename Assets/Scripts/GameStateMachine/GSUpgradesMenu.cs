@@ -27,6 +27,8 @@ public partial class GameStateMachine : MonoBehaviour
         {
             // Hide the tutorial
 			Destroy(Shop);
+			readyPlayer1 = false;
+			readyPlayer2 = false;
         }
 
         public override void OnUpdate(float deltaTime)
