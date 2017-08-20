@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ShopItem : MonoBehaviour
 {
+	public string AbilityId;
 	[SerializeField] private Text itemName;
 	[SerializeField] private Text description;
 	[SerializeField] private Text cost;
@@ -12,9 +13,10 @@ public class ShopItem : MonoBehaviour
 	[SerializeField] private Image controls;
 	[SerializeField] private GameObject locked;
 
-	public void SetInfo(string name, string desc, int cost, Sprite image,
+	public void SetInfo(string id, string name, string desc, int cost, Sprite image,
 		Sprite controls, bool locked)
 	{
+		AbilityId = id;
 		SetName (name);
 		SetDescription (desc);
 		SetCost (cost);

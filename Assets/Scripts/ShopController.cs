@@ -38,6 +38,7 @@ public class ShopController : MonoBehaviour
 					items [i].Add (item.GetComponent<ShopItem> ());
 					item.GetComponent<ShopItem> ().SetInfo
 					(
+						GameManager.instance.AbilitiesDatabase [j].Id,
 						GameManager.instance.AbilitiesDatabase [j].Name,
 						GameManager.instance.AbilitiesDatabase [j].Description,
 						GameManager.instance.AbilitiesDatabase [j].Cost,
@@ -46,10 +47,10 @@ public class ShopController : MonoBehaviour
 						GameManager.instance.AbilitiesDatabase [j].Locked
 					);
 
-					item.GetComponent<Button> ().onClick.AddListener (delegate
+					/*item.GetComponent<Button> ().onClick.AddListener (delegate
 					{
 						PurchaseItem (playerId, GameManager.instance.AbilitiesDatabase [abilityIndex].Id);
-					});
+					});*/
 				}
 			}
 		}
@@ -66,6 +67,7 @@ public class ShopController : MonoBehaviour
 
 	void Update()
 	{
+		#region Move
 		for (int i = 0; i < GameManager.instance.nbPlayers; i++)
 		{
 			if (Input.GetAxis ("Vertical_P" + (i + 1).ToString ()) > 0.0f)
@@ -89,6 +91,17 @@ public class ShopController : MonoBehaviour
 				allowMovement [i] = true;
 			}
 		}
+		#endregion
+		#region Buy
+		if (Input.GetKeyDown(KeyCode.Joystick1Button0)) // "A" button
+		{
+			PurchaseItem(0, items[0][selectedItem[0]].AbilityId);
+		}
+		if (Input.GetKeyDown(KeyCode.Joystick2Button0)) // "A" button
+		{
+			PurchaseItem(1, items[1][selectedItem[1]].AbilityId);
+		}
+		#endregion
 	}
 
 	void UpdateCurrency()
