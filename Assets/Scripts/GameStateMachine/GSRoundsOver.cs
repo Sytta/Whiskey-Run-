@@ -15,6 +15,7 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnEnter()
 		{
             owner.currentState = this;
+            Debug.Log("Round over");
             // Show rounds summary
         }
 
@@ -26,7 +27,7 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public override void OnUpdate(float deltaTime)
 		{
-			// nothing for now.
+            // nothing for now.
 		}
 
 		public void OnRematch()

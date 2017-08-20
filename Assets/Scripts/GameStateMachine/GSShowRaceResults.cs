@@ -13,6 +13,8 @@ public partial class GameStateMachine : MonoBehaviour
 		{
             owner.currentState = this;
             // show results
+
+            OnBothPlayersReady();
         }
 
 		public override void OnExit()

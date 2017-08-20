@@ -22,8 +22,13 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public override void OnExit()
 		{
-			// Destroy caravans through the spawner perhaps
-		}
+            // Destroy caravans through the spawner perhaps
+            //GameManager.instance.caravanSpanwer.DestroyCaravans();
+            //GameManager.instance.caravanSpanwer = null;
+
+            // Destory RacingUI
+            Destroy(GameManager.instance.racingUI);
+        }
 
 		public override void OnUpdate(float deltaTime)
 		{
@@ -39,7 +44,10 @@ public partial class GameStateMachine : MonoBehaviour
                     OnPlayerFinished(playerId);
                     Debug.Log("Player " + caravan.GetComponent<CaravanInput>().playerId + " finished!");
                 }
+                
             }
+            
+            
         }
 
 		public void OnPlayerFinished(int player)
@@ -47,13 +55,12 @@ public partial class GameStateMachine : MonoBehaviour
 			if (!playerFinished[player])
             {
                 playerFinished[player] = true;
-                
+                // Disable player caravan input
+                GameManager.instance.caravanSpanwer.DisableCaravanInput(player); // doesn't work
+
                 // If the other player hasn't finished
                 if (!playerFinished[(player + 1) % 2])
                 {
-                    // Disable player caravan input
-                    GameManager.instance.caravanSpanwer.DisableCaravanInput(player);
-
                     // Set Winner / Looser
                     GameManager.instance.players[player].isWinner = true;
                     GameManager.instance.players[(player + 1) % 2].isWinner = false;
@@ -62,15 +69,9 @@ public partial class GameStateMachine : MonoBehaviour
                 }
             }
 			// Once both players finish, change state
-			if (playerFinished[0] && playerFinished[1])
-			{
-                // Destroy caravans through the spawner
-                GameManager.instance.caravanSpanwer.DestroyCaravans();
-                GameManager.instance.caravanSpanwer = null;
-
-                // Destory RacingUI
-                Destroy(GameManager.instance.PrefabManager.RacingUI);
-				
+			//if (playerFinished[0] && playerFinished[1])
+            if (playerFinished[0])
+            { 				
                 owner.GoToState("ShowRaceResults");
 			}
 		}

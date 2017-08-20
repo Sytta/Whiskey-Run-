@@ -14,7 +14,7 @@ public class CaravanSpawner : MonoBehaviour
 
 	void Start()
 	{
-		DontDestroyOnLoad (this.gameObject);
+
 	}
 
 	GameObject SpawnCaravan(Transform transform, int playerId)
@@ -75,5 +75,7 @@ public class CaravanSpawner : MonoBehaviour
     public void DisableCaravanInput(int playerId)
     {
         caravans[playerId].GetComponent<CaravanInput>().DisableInput();
+        Debug.Log("Disabled input of Player " + (playerId + 1));
+        caravans[playerId].GetComponent<MotionControl>().currentSpeed = 0;
     }
 }

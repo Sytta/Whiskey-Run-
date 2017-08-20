@@ -21,6 +21,12 @@ public partial class GameStateMachine : MonoBehaviour
             /*Debug.Log("Going from MainMenu to Tutorial");
             OnClickedPlay();*/
             owner.currentState = this;
+            if (SceneManager.GetActiveScene().name != "Boot")
+            {
+                SceneManager.LoadScene("Boot");
+
+                SceneManager.sceneLoaded += OnSceneLoaded;
+            }
             mainMenu = Instantiate(GameManager.instance.PrefabManager.MainMenuPrefab);
             startGame = mainMenu.GetComponentInChildren<Button>();
             startGame.onClick.AddListener(OnClickedPlay);
@@ -45,17 +51,15 @@ public partial class GameStateMachine : MonoBehaviour
 		public void OnClickedPlay()
 		{
             Debug.Log("Going to Tutorial");
+            owner.GoToState("Tutorial");
 
-            SceneManager.LoadScene("Scene_Race01");
-
-            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         // called second
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             Debug.Log("OnSceneLoaded: " + scene.name);
-            owner.GoToState("Tutorial");
+                
         }
 
         

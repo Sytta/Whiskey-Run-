@@ -31,13 +31,16 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public override void OnUpdate(float deltaTime)
 		{
-			// update seconds left and UI?
-			if ((timeLeft -= deltaTime) <= 1)
-			{
-				OnCountdownExpired();
-			}
+            // update seconds left and UI?
+            if (racingUI != null)
+            {
+                if ((timeLeft -= deltaTime) <= 1)
+                {
+                    OnCountdownExpired();
+                }
 
-            racingUI.SetCountDown(((int)timeLeft).ToString());
+                racingUI.SetCountDown(((int)timeLeft).ToString());
+            }
 
         }
 
