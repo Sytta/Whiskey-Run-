@@ -10,6 +10,7 @@ public class CaravanCollisionHandler : MonoBehaviour {
 	[SerializeField]
 	AbilityController caravanAbilities;
 
+
 	public void SetOwner(int playerId)
 	{
 		owner = GameManager.instance.players[playerId - 1];
@@ -25,14 +26,18 @@ public class CaravanCollisionHandler : MonoBehaviour {
 			{
 				if(immunities && immunities.VerifyCanUse())
 				{
-					immunities.Use(Vector3.zero);
-				}
+                    immunities.Use(Vector3.zero);
+                }
 				else
 				{
-					Mathf.Max(owner.Abilities["Crate"] -= 1, 0);
-					inventoryView.DropItem(CaravanInventoryView.ItemTypes.Crate);
+                    if (owner.Abilities["Crate"] > 0)
+                    {
+                        Mathf.Max(owner.Abilities["Crate"] -= 1, 0);
+                        inventoryView.DropItem(CaravanInventoryView.ItemTypes.Crate);
+                    }
 				}
 			}
 		}
 	}
+
 }

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ImmunityComponent : BaseAbilityComponent
 {
+    bool usingImmunity = false;
+
 	public override void OnSetup() { }
 
 	public override void Use(Vector3 direction)
@@ -14,8 +16,17 @@ public class ImmunityComponent : BaseAbilityComponent
 
 		Debug.Log ("Using immunity!");
 
-		currentCoolDownTimer = Ability.CoolDown;
-		StartCoroutine (CoolDownTimer());
+        if (!usingImmunity)
+        {
+            usingImmunity = true;
+            currentCoolDownTimer = Ability.CoolDown;
+            StartCoroutine(CoolDownTimer());
+        } else
+        {
+            usingImmunity = false;
+        }
+
+		
 	}
 
 	public override bool IsReady() { return false; }

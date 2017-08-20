@@ -12,16 +12,20 @@ public partial class GameStateMachine : MonoBehaviour
 
         private RacingUI racingUI;
 
+        bool isReady = false;
+
 		public GSCountdown(GameStateMachine owner) : base(owner) { }
 
 		public override void OnEnter()
 		{
 			timeLeft = 4.0f;
             owner.currentState = this;
+            
+			GameManager.instance.AudioService.PlayMusic("Race");
+
             // Start countdown
             racingUI = GameManager.instance.racingUI.GetComponent<RacingUI>();
-            racingUI.InitCountDown(timeLeft.ToString());
-			GameManager.instance.AudioService.PlayMusic("Race");
+
         }
 
 		public override void OnExit()
@@ -32,14 +36,25 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnUpdate(float deltaTime)
 		{
             // update seconds left and UI?
-            if (racingUI != null)
+            if (owner.currentState == this && timeLeft < 4f)
             {
-                if ((timeLeft -= deltaTime) <= 1)
+                isReady = true;
+            } else
+            {
+                timeLeft -= deltaTime;
+            }
+            if (isReady)
+            {
+                racingUI.InitCountDown(timeLeft.ToString());
+                if (racingUI != null)
                 {
-                    OnCountdownExpired();
-                }
+                    if ((timeLeft -= deltaTime) <= 1)
+                    {
+                        OnCountdownExpired();
+                    }
 
-                racingUI.SetCountDown(((int)timeLeft).ToString());
+                    racingUI.SetCountDown(((int)timeLeft).ToString());
+                }
             }
 
         }

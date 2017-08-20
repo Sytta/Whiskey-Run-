@@ -57,6 +57,7 @@ public class CaravanInventoryView : MonoBehaviour {
 		if (item != null && RemoveItem(itemType))
 		{
 			var droppedItem = Instantiate(item, ItemDropSpawnPoint.position, ItemDropSpawnPoint.rotation);
+            droppedItem.tag = "dropped";
 			var itemPhysics = droppedItem.GetComponent<Rigidbody>();
 			if (itemPhysics)
 			{

@@ -32,6 +32,18 @@ public partial class GameStateMachine : MonoBehaviour
 
         void Initialize()
         {
+            // Find caravan spawner and Spawn caravans
+            GameManager.instance.caravanSpanwer = GameObject.FindObjectOfType<CaravanSpawner>();
+            if (GameManager.instance.caravanSpanwer != null)
+                GameManager.instance.caravanSpanwer.Initialize();
+
+            //  Remove all dropped items
+            GameObject[] droppedItems = GameObject.FindGameObjectsWithTag("dropped");
+            for (int i = 0; i < droppedItems.Length; i++)
+            {
+                Destroy(droppedItems[i]);
+            }
+
             // Show Racing UI
             if (GameManager.instance.racingUI != null)
             {
@@ -42,17 +54,13 @@ public partial class GameStateMachine : MonoBehaviour
 
             GameManager.instance.racingUI.GetComponent<RacingUI>().DisableCountDown();
 
-            // Find caravan spawner and Spawn caravans
-            GameManager.instance.caravanSpanwer = GameObject.FindObjectOfType<CaravanSpawner>();
-            GameManager.instance.caravanSpanwer.Initialize();
-
             OnSetupFinished();
         }
 
         // called second
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-
+            
             Initialize();
 
             Debug.Log("OnSceneLoaded: " + scene.name);
