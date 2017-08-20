@@ -86,7 +86,7 @@ public class AudioService : MonoBehaviour {
 		return null;
 	}
 
-	void PlayOneShotSFX(string sfxName)
+	public void PlayOneShotSFX(string sfxName)
 	{
 		// picks next available audio source and plays a sound unless all are in use
 		foreach (var sfx in SFXDatabase)
@@ -101,6 +101,5 @@ public class AudioService : MonoBehaviour {
 				break;
 			}
 		}
-		
 	}
 }
