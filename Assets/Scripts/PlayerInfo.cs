@@ -37,7 +37,7 @@ public class PlayerInfo
     public void SetAbilityController(AbilityController ab)
     {
         abilityController = ab;
-
+		ab.PlayerId = id;
 		abilityController.SetUpAbilities (Abilities);
     }
 }

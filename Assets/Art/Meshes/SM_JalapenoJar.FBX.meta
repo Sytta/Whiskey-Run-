@@ -6,10 +6,19 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Object001
+    100004: Sm_jalapeno Jar
     400000: //RootNode
+    400002: Object001
+    400004: Sm_jalapeno Jar
     2300000: //RootNode
+    2300002: Object001
+    2300004: Sm_jalapeno Jar
     3300000: //RootNode
+    3300002: Object001
+    3300004: Sm_jalapeno Jar
     4300000: Sm_jalapeno Jar
+    4300002: Object001
   materials:
     importMaterials: 1
     materialName: 0
