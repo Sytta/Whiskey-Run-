@@ -51,7 +51,6 @@ public class AbilityController : MonoBehaviour
 			{
 				BaseAbilityComponent comp = abil.CreateComponent (this.gameObject);
 				comp.PlayerId = this.PlayerId;
-				comp.Charges = abilitiesMapping [ability];
                 components.Add(comp);
 			}
 			else
