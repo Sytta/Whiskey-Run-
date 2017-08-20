@@ -7,6 +7,8 @@ public class CaravanCollisionHandler : MonoBehaviour {
 	PlayerInfo owner;
 	[SerializeField]
 	CaravanInventoryView inventoryView;
+	[SerializeField]
+	AbilityController caravanAbilities;
 
 	public void SetOwner(int playerId)
 	{
@@ -16,23 +18,21 @@ public class CaravanCollisionHandler : MonoBehaviour {
 	private void OnTriggerEnter(Collider other)
 	{
 		var invWreck = other.GetComponent<InventoryWrecker>();
+		var immunities = caravanAbilities.gameObject.GetComponent<ImmunityComponent>();
 		if (invWreck)
 		{
 			for (int i = 0; i < invWreck.ItemsToDropOnCollision; i++)
 			{
-				Mathf.Max(owner.nbCrates -= 1, 0);
-				inventoryView.DropItem(CaravanInventoryView.ItemTypes.Crate);
+				if(immunities && immunities.VerifyCanUse())
+				{
+					immunities.Use(Vector3.zero);
+				}
+				else
+				{
+					Mathf.Max(owner.nbCrates -= 1, 0);
+					inventoryView.DropItem(CaravanInventoryView.ItemTypes.Crate);
+				}
 			}
 		}
-	}
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
