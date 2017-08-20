@@ -35,18 +35,6 @@ public partial class GameStateMachine : MonoBehaviour
 			{
 				GameManager.instance.players [i].ResetCrates ();
 			}
-
-            // Add listener
-            buttons = scoreBoard.GetComponentsInChildren<Button>();
-
-            for (int i = 0; i < buttons.Length; i ++)
-            {
-                if (buttons[i].name == "ContinueButton")
-                    buttons[i].onClick.AddListener(NextRound);
-                else
-                    buttons[i].onClick.AddListener(Quit);
-            }
-
         }
 
 		public override void OnExit()
@@ -57,22 +45,16 @@ public partial class GameStateMachine : MonoBehaviour
 
 		public override void OnUpdate(float deltaTime)
 		{
-			// nothing for now.
-		}
-
-		/*public void OnBothPlayersReady()
-		{
-			// Check if there are rounds left
-			// if so
-			if (true /* replace with rounds left condition*//*)
-			/*{
-				owner.GoToState("UpgradesMenu");
-			}
-			else
+			if (Input.GetAxis ("AAbility_P1") > 0.0f || Input.GetAxis ("AAbility_P2") > 0.0f)
 			{
-				owner.GoToState("RoundsOver");
+				GameObject selectedButton = scoreBoard.GetComponent<ScoreBoard> ().buttons [
+					                            scoreBoard.GetComponent<ScoreBoard> ().selectedButton];
+				if (selectedButton.name == "ContinueButton")
+					NextRound ();
+				else
+					Quit ();
 			}
-		}*/
+		}
 
         public void Quit()
         {
