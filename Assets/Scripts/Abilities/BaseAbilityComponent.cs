@@ -5,7 +5,7 @@ using UnityEngine;
 public class BaseAbilityComponent : MonoBehaviour
 {
 	[HideInInspector] public Ability Ability { get; set; }
-	[HideInInspector] public int Charges { get; set; }
+	//[HideInInspector] public int Charges { get; set; }
 	public int PlayerId;
 	/*[HideInInspector] public string AbilityId { get; set; }
 	[HideInInspector] public string Name { get; set; }
@@ -44,11 +44,14 @@ public class BaseAbilityComponent : MonoBehaviour
 
 		if (Ability.Consumable)
 		{
-			if (Charges == 0)
+			if (GameManager.instance.players[PlayerId - 1].Abilities[Ability.Id] == 0)
 			{
 				Debug.Log ("Oops! You have no more charges...");
 				return false;
-			}
+			} else
+            {
+                GameManager.instance.players[PlayerId - 1].Abilities[Ability.Id]--;
+            }
 		}
 
 		return true;
