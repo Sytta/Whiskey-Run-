@@ -23,11 +23,11 @@ public class ScoreBoard : MonoBehaviour
             if (GameManager.instance.players[i].isWinner)
             {
                 SetPosition(i, 1);
-                SetPositionBonus(i, 1000);
+                SetPositionBonus(i, 200);
             } else
             {
                 SetPosition(i, 2);
-                SetPositionBonus(i, 500);
+                SetPositionBonus(i, 0);
             }
 
             // Set nb crates
