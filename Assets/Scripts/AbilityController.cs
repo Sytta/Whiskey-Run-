@@ -8,21 +8,19 @@ public class AbilityController : MonoBehaviour
 {
 	public int PlayerId;
     // Reference to Playerinfo's ability selection
-	Dictionary<string, BaseAbilityComponent> abilitiesComponents;
 	List<BaseAbilityComponent> components;
 
 	void Start()
-	{
-		abilitiesComponents = new Dictionary<string, BaseAbilityComponent> ();
-		components = new List<BaseAbilityComponent> ();
+    { 
 	}
 
 	void Update()
 	{
-		foreach (BaseAbilityComponent comp in abilitiesComponents.Values)
+		foreach (BaseAbilityComponent comp in components)
 		{
 			foreach (string button in comp.Ability.Input)
 			{
+                
 				if (Input.GetAxis (button + "_P" + PlayerId.ToString ()) > 0.0f)
 				{
 					comp.Use(new Vector3(0.0f, 0.0f, 0.0f));
@@ -34,7 +32,7 @@ public class AbilityController : MonoBehaviour
     // Create all the abilities and call on setup on each of them
     void Setup()
 	{
-		foreach (BaseAbilityComponent comp in abilitiesComponents.Values)
+		foreach (BaseAbilityComponent comp in components)
 		{
 			comp.OnSetup ();
 		}
@@ -42,8 +40,8 @@ public class AbilityController : MonoBehaviour
 
 	public void SetUpAbilities(Dictionary<string, int> abilitiesMapping)
 	{
-		if (abilitiesComponents == null)
-			abilitiesComponents = new Dictionary<string, BaseAbilityComponent> ();
+		if (components == null)
+            components = new List<BaseAbilityComponent> ();
 		
 		foreach (string ability in abilitiesMapping.Keys)
 		{
@@ -54,7 +52,7 @@ public class AbilityController : MonoBehaviour
 				BaseAbilityComponent comp = abil.CreateComponent (this.gameObject);
 				comp.PlayerId = this.PlayerId;
 				comp.Charges = abilitiesMapping [ability];
-				abilitiesComponents.Add(ability, comp);
+                components.Add(comp);
 			}
 			else
 			{
@@ -62,7 +60,7 @@ public class AbilityController : MonoBehaviour
 			}
 		}
 
-		foreach (BaseAbilityComponent component in abilitiesComponents.Values)
+		foreach (BaseAbilityComponent component in components)
 		{
 			component.OnSetup ();
 		}

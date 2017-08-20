@@ -38,7 +38,7 @@ public class BaseAbilityComponent : MonoBehaviour
 		// Failsafe
 		if (currentCoolDownTimer != 0)
 		{
-			Debug.Log ("Oops! Please wait cooldown to use immunity...");
+			Debug.Log ("Oops! Please wait cooldown to use ability...");
 			return false;
 		}
 
