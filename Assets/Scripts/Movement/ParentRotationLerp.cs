@@ -19,7 +19,7 @@ public class ParentRotationLerp: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		var newRotation = Quaternion.Slerp(previousRotation, transform.parent.localRotation, LerpRotationSpeed * Time.deltaTime);
-		newRotation = Quaternion.Euler(new Vector3(newRotation.eulerAngles.x, newRotation.eulerAngles.y, 0f));
+		newRotation = Quaternion.Euler(new Vector3(0f, newRotation.eulerAngles.y, 0f));
 		previousRotation = transform.rotation = newRotation;
 		//previousRotation = transform.rotation = Quaternion.Slerp(previousRotation, transform.parent.localRotation, LerpRotationSpeed * Time.deltaTime);
 	}
