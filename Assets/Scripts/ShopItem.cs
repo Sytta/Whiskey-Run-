@@ -8,6 +8,9 @@ public class ShopItem : MonoBehaviour
 	[SerializeField] private Text description;
 	[SerializeField] private Text cost;
 	[SerializeField] private Image image;
+	[SerializeField] private Image selectedImg;
+	[SerializeField] private Image controls;
+	[SerializeField] private GameObject locked;
 
 	public void SetInfo(string name, string desc, int cost, Sprite image)
 	{
