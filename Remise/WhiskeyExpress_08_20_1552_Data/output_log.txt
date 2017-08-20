@@ -1,0 +1,76 @@
+Mono path[0] = 'C:/Temp/GameJam-08-17/Remise/WhiskeyExpress_08_20_1552_Data/Managed'
+Mono path[1] = 'C:/Temp/GameJam-08-17/Remise/WhiskeyExpress_08_20_1552_Data/Mono'
+Mono config path = 'C:/Temp/GameJam-08-17/Remise/WhiskeyExpress_08_20_1552_Data/Mono/etc'
+PlayerConnection initialized from C:/Temp/GameJam-08-17/Remise/WhiskeyExpress_08_20_1552_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55423
+Multi-casting "[IP] 10.10.22.38 [Port] 55423 [Flags] 3 [Guid] 657544383 [EditorId] 276573422 [Version] 1048832 [Id] WindowsPlayer(326-H4) [Debug] 1" to [225.0.0.222:54997]...
+Waiting for connection from host on [0.0.0.0:55423]...
+PlayerConnection accepted from [10.10.22.38] handle:0x278
+Started listening to [0.0.0.0:55423]
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56383
+PlayerConnection already initialized - listening to [0.0.0.0:55423]
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
+    Vendor:   NVIDIA
+    VRAM:     1989 MB
+    Driver:   1.1.0.0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.174 seconds
+Platform assembly: C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Temp\GameJam-08-17\Remise\WhiskeyExpress_08_20_1552_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Mono/MonoBehaviour.cpp Line: 1754)
+
+A script behaviour (script unknown or not yet loaded) has a different serialization layout when loading. (Read 40 bytes but expected 136 bytes)
+Did you #ifdef UNITY_EDITOR a section of your serialized properties in any of your scripts?
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Serialize/SerializedFile.cpp Line: 1808)
+
+UnloadTime: 4.004304 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerInfo+<PurchaseAbility>c__AnonStorey0.<>m__0 (.Ability x) [0x00001] in C:\Temp\GameJam-08-17\Assets\Scripts\PlayerInfo.cs:26 
+  at System.Collections.Generic.List`1[Ability].GetIndex (Int32 startIndex, Int32 count, System.Predicate`1 match) [0x0000b] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Collections.Generic/List.cs:313 
+  at System.Collections.Generic.List`1[Ability].Find (System.Predicate`1 match) [0x00006] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Collections.Generic/List.cs:216 
+  at PlayerInfo.PurchaseAbility (System.String ability) [0x0002b] in C:\Temp\GameJam-08-17\Assets\Scripts\PlayerInfo.cs:26 
+  at PlayerInfo..ctor (Int32 id, Int32 money) [0x0003e] in C:\Temp\GameJam-08-17\Assets\Scripts\PlayerInfo.cs:21 
+  at GameManager.InitGame () [0x00029] in C:\Temp\GameJam-08-17\Assets\Scripts\GameManager.cs:49 
+  at GameManager.Awake () [0x00043] in C:\Temp\GameJam-08-17\Assets\Scripts\GameManager.cs:40 
+ 
+(Filename: /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Collections.Generic/List.cs Line: 313)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+UnityEngine.Object:DontDestroyOnLoad(Object)
+PrefabManager:Start() (at C:\Temp\GameJam-08-17\Assets\Scripts\PrefabManager.cs:15)
+
+[C:/buildslave/unity/build/Runtime/SceneManager/SceneManager.cpp line 447] 
+(Filename: C:/Temp/GameJam-08-17/Assets/Scripts/PrefabManager.cs Line: 15)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+UnityEngine.Object:DontDestroyOnLoad(Object)
+GameStateMachine:Start() (at C:\Temp\GameJam-08-17\Assets\Scripts\GameStateMachine\GameStateMachine.cs:61)
+
+[C:/buildslave/unity/build/Runtime/SceneManager/SceneManager.cpp line 447] 
+(Filename: C:/Temp/GameJam-08-17/Assets/Scripts/GameStateMachine/GameStateMachine.cs Line: 61)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1cf8 -> priority: 1 
+  Thread -> id: 1c50 -> priority: 1 
+Waiting for finish
