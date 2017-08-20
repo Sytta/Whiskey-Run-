@@ -76,6 +76,7 @@ public class CaravanSpawner : MonoBehaviour
     {
         caravans[playerId].GetComponent<CaravanInput>().DisableInput();
         Debug.Log("Disabled input of Player " + (playerId + 1));
-        caravans[playerId].GetComponent<MotionControl>().currentSpeed = 0;
+        // Slowly come to a stop
+        caravans[playerId].GetComponent<MotionControl>().AccelerateToward(new Vector3(0, 0, 0));
     }
 }
