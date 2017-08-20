@@ -31,10 +31,10 @@ public class ScoreBoard : MonoBehaviour
             }
 
             // Set nb crates
-            SetCrates(i, GameManager.instance.players[i].nbCrates);
+			SetCrates(i, GameManager.instance.players[i].Abilities["Crate"]);
 
             // Set crates income
-            SetCratesBonus(i, GameManager.instance.players[i].nbCrates * cratePrice);
+			SetCratesBonus(i, GameManager.instance.players[i].Abilities["Crate"] * cratePrice);
 
             // Set total income
             SetTotalIncome(i, GameManager.instance.players[i].totalIncome);

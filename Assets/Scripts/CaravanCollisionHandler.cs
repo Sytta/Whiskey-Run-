@@ -29,7 +29,7 @@ public class CaravanCollisionHandler : MonoBehaviour {
 				}
 				else
 				{
-					Mathf.Max(owner.nbCrates -= 1, 0);
+					Mathf.Max(owner.Abilities["Crate"] -= 1, 0);
 					inventoryView.DropItem(CaravanInventoryView.ItemTypes.Crate);
 				}
 			}
