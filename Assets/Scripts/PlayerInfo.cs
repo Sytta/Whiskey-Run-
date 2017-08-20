@@ -16,7 +16,7 @@ public class PlayerInfo
         this.id = id;
         this.money = money;
 		Abilities = new Dictionary<string, int> ();
-		Abilities.Add ("Crate", 5);
+		Abilities.Add ("Crate", 4);
         this.isWinner = false;
 		PurchaseAbility ("Lasso");
 	}
