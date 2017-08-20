@@ -24,6 +24,13 @@ public class RacingUI : MonoBehaviour
 		}
 	}
 
+    public void SetWinner(int player, string text)
+    {
+        countDown[player].text = text;
+
+        countDown[player].gameObject.SetActive(true);
+    }
+
 	public void DisableCountDown()
 	{
 		for (int i = 0; i < countDown.Length; i++)

@@ -17,6 +17,8 @@ public partial class GameStateMachine : MonoBehaviour
             owner.currentState = this;
             Debug.Log("Round over");
             // Show rounds summary
+
+            OnRematch();
         }
 
 		public override void OnExit()
