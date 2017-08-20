@@ -10,6 +10,8 @@ public partial class GameStateMachine : MonoBehaviour
 		int winnerId;
         bool[] playerFinished;
 
+        Vector3 goalPosition;
+
 		public GSInRace(GameStateMachine owner) : base(owner) { }
 
 		public override void OnEnter()
@@ -18,7 +20,11 @@ public partial class GameStateMachine : MonoBehaviour
 			playerFinished = new bool[2] { false, false };
             // Enable playerInput
             GameManager.instance.caravanSpanwer.EnableCaravanInput();
-		}
+
+            // Get goal position
+            goalPosition =  GameObject.FindGameObjectWithTag("goal").transform.position;
+
+        }
 
 		public override void OnExit()
 		{
@@ -39,7 +45,8 @@ public partial class GameStateMachine : MonoBehaviour
             {
                 GameObject caravan = GameManager.instance.caravanSpanwer.caravans[i];
                 int playerId = caravan.GetComponent<CaravanInput>().playerId - 1;
-                if (caravan.transform.position.x >= GameObject.FindGameObjectWithTag("goal").transform.position.x && !playerFinished[playerId])
+
+                if ((caravan.transform.position - goalPosition).magnitude <= 40 && !playerFinished[playerId])
                 {
                     OnPlayerFinished(playerId);
                     Debug.Log("Player " + caravan.GetComponent<CaravanInput>().playerId + " finished!");
