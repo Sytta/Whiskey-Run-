@@ -5,8 +5,13 @@ public class NitroComponent : BaseAbilityComponent
 {
 	public override void OnSetup() { }
 
-	public override void Use(Vector3 direction)
+	public override void Use(Vector3 direction )
 	{
+        if (GameManager.instance.caravanSpanwer.caravans[PlayerId - 1].GetComponent<NitroComponent>() == null)
+        {
+            Debug.Log("Dont have nitro");
+            return;
+        }
 		if (!VerifyCanUse())
 		{
 			return;
@@ -14,7 +19,12 @@ public class NitroComponent : BaseAbilityComponent
 
 		Debug.Log ("Using nitro!");
 
-		currentCoolDownTimer = Ability.CoolDown;
+        // Add speed to the caravan using it
+        GameManager.instance.caravanSpanwer.caravans[PlayerId - 1].GetComponent<MotionControl>().AddModifier(3f, 3f, 2f);
+
+
+        // Start cool down
+        currentCoolDownTimer = Ability.CoolDown;
 		StartCoroutine (CoolDownTimer());
 	}
 

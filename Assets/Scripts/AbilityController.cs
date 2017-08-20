@@ -20,9 +20,11 @@ public class AbilityController : MonoBehaviour
 		{
 			foreach (string button in comp.Ability.Input)
 			{
-                
-				if (Input.GetAxis (button + "_P" + PlayerId.ToString ()) > 0.0f)
+                string input = button + "_P" + PlayerId;
+
+                if (Input.GetAxis (input) > 0.0f)
 				{
+                    Debug.Log("Player " + PlayerId + " using " + button);
 					comp.Use(new Vector3(0.0f, 0.0f, 0.0f));
 				}
 			}

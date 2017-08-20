@@ -7,7 +7,15 @@ public class RacingUI : MonoBehaviour
 	[SerializeField] private Text[] playerCurrency;
 	[SerializeField] private Text[] countDown;
 
-	public void InitCountDown(string text)
+    private void Start()
+    {
+        for (int i = 0; i < playerCurrency.Length; i++)
+        {
+            playerCurrency[i].text = GameManager.instance.players[i].money.ToString() + "$";
+        }
+    }
+
+    public void InitCountDown(string text)
 	{
 		for (int i = 0; i < countDown.Length; i++)
 		{
