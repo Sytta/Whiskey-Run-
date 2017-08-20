@@ -21,7 +21,7 @@ public partial class GameStateMachine : MonoBehaviour
             // Start countdown
             racingUI = GameManager.instance.racingUI.GetComponent<RacingUI>();
             racingUI.InitCountDown(timeLeft.ToString());
-
+			GameManager.instance.AudioService.PlayMusic("Race");
         }
 
 		public override void OnExit()

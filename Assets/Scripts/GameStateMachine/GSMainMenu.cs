@@ -30,7 +30,8 @@ public partial class GameStateMachine : MonoBehaviour
             mainMenu = Instantiate(GameManager.instance.PrefabManager.MainMenuPrefab);
             startGame = mainMenu.GetComponentInChildren<Button>();
             startGame.onClick.AddListener(OnClickedPlay);
-            Debug.Log("In main menu");
+			GameManager.instance.AudioService.PlayMusic("Menu");
+			Debug.Log("In main menu");
         }
 
 		public override void OnExit()
