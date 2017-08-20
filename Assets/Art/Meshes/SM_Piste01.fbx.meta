@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: 29e2422d58a06344cbe595853ade0c6b
-timeCreated: 1503180766
+guid: 958df59f500e7e0419cf3267c3014948
+timeCreated: 1503240769
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: SM_Canyon
+    100000: Ground
+    100002: //RootNode
+    100004: Walls
+    400000: Ground
+    400002: //RootNode
+    400004: Walls
+    2300000: Ground
+    2300002: Walls
+    3300000: Ground
+    3300002: Walls
+    4300000: Ground
+    4300002: Walls
   materials:
     importMaterials: 1
     materialName: 0
