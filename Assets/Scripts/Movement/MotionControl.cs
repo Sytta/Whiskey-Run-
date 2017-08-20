@@ -31,17 +31,29 @@ public class MotionControl : MonoBehaviour {
 		{
 			if (targetMoveDirection != Vector3.zero)
 			{
-				currentSpeed = Mathf.Min(currentSpeed + targetMoveDirection.magnitude * acceleration*Time.deltaTime, maxSpeed);
+				var step = targetMoveDirection.magnitude * acceleration * Time.deltaTime;
+				step = (targetMoveDirection.z < 0) ? -step : step;
+				currentSpeed = Mathf.Clamp( currentSpeed + step, -maxSpeed, maxSpeed);
 			}
 			else
 			{
-				currentSpeed = Mathf.Max(currentSpeed - deceleration*Time.deltaTime, 0);
+				float step = deceleration * Time.deltaTime;
+				if (currentSpeed > 0)
+				{
+					currentSpeed = Mathf.Max(currentSpeed - step, 0);
+				}
+				else
+				{
+					currentSpeed = Mathf.Min(currentSpeed + step, 0);
+				}
+				
 			}
 		}
 
 		// Lerp this later
 		var turnCoefficient = Time.deltaTime * currentSpeed * rotateSpeed * targetMoveDirection.x;
-		transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward + transform.right* turnCoefficient, floorChecker.floorUpVector), floorChecker.floorUpVector);
+		var intendedForward = transform.forward + transform.right * turnCoefficient;
+		transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(intendedForward, floorChecker.floorUpVector), floorChecker.floorUpVector);
 		
 		// update every frame for gravity
 		movementController.SimpleMove(transform.TransformDirection(Vector3.forward).normalized * currentSpeed);
