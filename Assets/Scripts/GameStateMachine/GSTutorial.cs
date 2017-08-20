@@ -37,7 +37,8 @@ public partial class GameStateMachine : MonoBehaviour
 			switch (currentState)
 			{
 			case State.CONTROLS:
-				Instantiate (GameManager.instance.PrefabManager.Controls);
+				//Instantiate (GameManager.instance.PrefabManager.Controls);
+				IncrementState();
 				break;
 			case State.TUTORIAL:
 				Instantiate (GameManager.instance.PrefabManager.Tutorial);
