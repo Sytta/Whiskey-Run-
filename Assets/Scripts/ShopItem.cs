@@ -59,5 +59,15 @@ public class ShopItem : MonoBehaviour
 	{
 		locked.SetActive (enable);
 	}
+
+	public void EnableSelected()
+	{
+		selectedImg.gameObject.SetActive (true);
+	}
+
+	public void DisableSelected()
+	{
+		selectedImg.gameObject.SetActive (false);
+	}
 }
 
