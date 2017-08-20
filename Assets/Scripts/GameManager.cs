@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
 		for (int i = 0; i < nbPlayers; i++)
 		{
-			players [i] = new PlayerInfo (i + 1, 3000, 5);
+			players [i] = new PlayerInfo (i + 1, 3000);
 		}
 
 		GameStateMachine.Init ();

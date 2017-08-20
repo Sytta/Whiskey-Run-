@@ -19,12 +19,22 @@ public partial class GameStateMachine : MonoBehaviour
 		{
             owner.currentState = this;
 
+            // Disable ability controller
+            for (int i = 0; i < GameManager.instance.caravanSpanwer.caravans.Count; i++)
+            {
+                GameManager.instance.caravanSpanwer.caravans[i].GetComponent<AbilityController>().enabled = false;
+            }
+
             playerInfos = GameManager.instance.players;
 
             // show results
             scoreBoard = Instantiate(GameManager.instance.PrefabManager.ScoreBoard);
 
             scoreBoard.GetComponent<ScoreBoard>().Initialize();
+			for (int i = 0; i < GameManager.instance.nbPlayers; i++)
+			{
+				GameManager.instance.players [i].ResetCrates ();
+			}
 
             // Add listener
             buttons = scoreBoard.GetComponentsInChildren<Button>();

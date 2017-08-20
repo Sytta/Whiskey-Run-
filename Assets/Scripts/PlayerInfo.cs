@@ -6,18 +6,17 @@ public class PlayerInfo
 {
     public int id { get; set; }
     public int money { get; set; }
-    public int nbCrates { get; set; }
     public bool isWinner { get; set; }
     public int totalIncome { get; set; }
     public Dictionary<string, int> Abilities;
     public AbilityController abilityController;
 
-	public PlayerInfo(int id, int money, int nbCrates)
+	public PlayerInfo(int id, int money)
 	{
         this.id = id;
         this.money = money;
-        this.nbCrates = nbCrates;
 		Abilities = new Dictionary<string, int> ();
+		Abilities.Add ("Crate", 5);
         this.isWinner = false;
 		PurchaseAbility ("Lasso");
 	}
@@ -41,4 +40,10 @@ public class PlayerInfo
 		ab.PlayerId = id;
 		abilityController.SetUpAbilities (Abilities);
     }
+
+	public void ResetCrates()
+	{
+		Abilities ["Crate"] = 0;
+	}
+		
 }

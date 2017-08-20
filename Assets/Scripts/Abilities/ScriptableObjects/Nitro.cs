@@ -15,13 +15,6 @@ public class Nitro : Ability
 		}
 
 		nitro.Ability = this;
-		/*nitro.AbilityId = Id;
-		nitro.Name = Name;
-		nitro.Cost = Cost;
-		nitro.Image = Image;
-		nitro.Sound = Sound;
-		nitro.CoolDown = CoolDown;
-		nitro.Input = Input;*/
 
 		return nitro;
 	}
