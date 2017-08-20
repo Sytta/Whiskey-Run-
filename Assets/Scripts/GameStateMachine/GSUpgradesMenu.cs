@@ -22,11 +22,6 @@ public partial class GameStateMachine : MonoBehaviour
             owner.currentState = this;
 			Shop = Instantiate (GameManager.instance.PrefabManager.Shop);
 
-            // Disable ability controller
-            for (int i = 0; i < GameManager.instance.caravanSpanwer.caravans.Count; i++)
-            {
-                GameManager.instance.caravanSpanwer.caravans[i].GetComponent<AbilityController>().enabled = false;
-            }
         }
 
         public override void OnExit()
