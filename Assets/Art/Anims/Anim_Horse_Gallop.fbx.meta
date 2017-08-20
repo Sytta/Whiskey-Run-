@@ -165,7 +165,175 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CowboyHat
+        weight: 1
+      - path: Horse
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_BackLeg_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_BackLeg_gr/Horse_BackLeg_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_BackLeg_gr/Horse_BackLeg_crv/Horse_BackKnee_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_BackLeg_gr/Horse_BackLeg_crv/Horse_BackKnee_gr/Horse_BackKnee_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_BackLeg_gr1
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_BackLeg_gr1/Horse_BackLeg_crv
+          1
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_BackLeg_gr1/Horse_BackLeg_crv
+          1/Horse_BackKnee_gr 1
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_BackLeg_gr1/Horse_BackLeg_crv
+          1/Horse_BackKnee_gr 1/Horse_BackKnee_crv 1
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_Tail00_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_Tail00_gr/Horse_Tail00_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_Tail00_gr/Horse_Tail00_crv/Horse_Tail01_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_BackBody_gr/Horse_BackBody_crv/Horse_Tail00_gr/Horse_Tail00_crv/Horse_Tail01_gr/Horse_Tail01_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_FrontLeg_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_FrontLeg_gr/Horse_FrontLeg_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_FrontLeg_gr/Horse_FrontLeg_crv/Horse_FrontKnee_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_FrontLeg_gr/Horse_FrontLeg_crv/Horse_FrontKnee_gr/Horse_FrontKnee_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_FrontLeg_gr1
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_FrontLeg_gr1/Horse_FrontLeg_crv
+          1
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_FrontLeg_gr1/Horse_FrontLeg_crv
+          1/Horse_FrontKnee_gr 1
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_FrontLeg_gr1/Horse_FrontLeg_crv
+          1/Horse_FrontKnee_gr 1/Horse_FrontKnee_crv 1
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_Neck00_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_Neck00_gr/Horse_Neck00_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_Neck00_gr/Horse_Neck00_crv/Horse_Neck01_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_Neck00_gr/Horse_Neck00_crv/Horse_Neck01_gr/Horse_Neck01_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_Neck00_gr/Horse_Neck00_crv/Horse_Neck01_gr/Horse_Neck01_crv/Horse_Neck02_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_Neck00_gr/Horse_Neck00_crv/Horse_Neck01_gr/Horse_Neck01_crv/Horse_Neck02_gr/Horse_Neck02_crv
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_Neck00_gr/Horse_Neck00_crv/Horse_Neck01_gr/Horse_Neck01_crv/Horse_Neck02_gr/Horse_Neck02_crv/Horse_Hat_gr
+        weight: 1
+      - path: Horse/Horse_MiddleBody_gr/Horse_MiddleBody_crv/Horse_FrontBody_gr/Horse_FrontBody_crv/Horse_Neck00_gr/Horse_Neck00_crv/Horse_Neck01_gr/Horse_Neck01_crv/Horse_Neck02_gr/Horse_Neck02_crv/Horse_Hat_gr/Horse_Hat_crv
+        weight: 1
+      - path: Horse_Root
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_BackEnd
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_BackEnd/Horse_Tail00
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_BackEnd/Horse_Tail00/Horse_Tail01
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_BackEnd/Horse_Tail00/Horse_Tail01/Horse_Tail_end
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_Hips_Mid
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_Hips_Mid/Horse_BackLeg_R
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_Hips_Mid/Horse_BackLeg_R/Horse_BackKnee_R
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_Hips_Mid/Horse_BackLeg_R/Horse_BackKnee_R/Horse_BackLeg_R_End
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_Hips_Mid/Horse_BackLeg_R1
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_Hips_Mid/Horse_BackLeg_R1/Horse_BackKnee_R1
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_BackBody/Horse_Hips_Mid/Horse_BackLeg_R1/Horse_BackKnee_R1/Horse_BackLeg_R_End1
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Neck00
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Neck00/Horse_Neck01
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Neck00/Horse_Neck01/Horse_Neck02
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Neck00/Horse_Neck01/Horse_Neck02/Horse_Hat1
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Neck00/Horse_Neck01/Horse_Neck02/Horse_Hat1/Horse_Hat_end
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Neck00/Horse_Neck01/Horse_Neck02/Horse_Head
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Neck00/Horse_Neck01/Horse_Neck02/Horse_Head/Horse_Head_end
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Shoulder_Mid
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Shoulder_Mid/Horse_FrontLeg_R
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Shoulder_Mid/Horse_FrontLeg_R/Horse_FrontKnee_R
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Shoulder_Mid/Horse_FrontLeg_R/Horse_FrontKnee_R/Horse_FrontLeg_R_End
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Shoulder_Mid/Horse_FrontLeg_R1
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Shoulder_Mid/Horse_FrontLeg_R1/Horse_FrontKnee_R1
+        weight: 1
+      - path: Horse_Root/Horse_BodyMiddle/Horse_FrontBody/Horse_Shoulder_Mid/Horse_FrontLeg_R1/Horse_FrontKnee_R1/Horse_FrontLeg_R_End1
+        weight: 1
+      - path: SM_Horse
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
