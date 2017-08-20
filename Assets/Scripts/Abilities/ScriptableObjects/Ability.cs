@@ -14,6 +14,8 @@ public class Ability : ScriptableObject
 	public float CoolDown;
 	public bool Purchasable;
 	public bool Locked;
+	public string[] Input;
+	public bool Consumable;
 
 	public virtual BaseAbilityComponent CreateComponent(GameObject obj) { return null; }
 }

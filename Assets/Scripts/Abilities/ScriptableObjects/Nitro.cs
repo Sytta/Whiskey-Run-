@@ -14,12 +14,14 @@ public class Nitro : Ability
 			Debug.Log ("Created nitro");
 		}
 
-		nitro.AbilityId = Id;
+		nitro.Ability = this;
+		/*nitro.AbilityId = Id;
 		nitro.Name = Name;
 		nitro.Cost = Cost;
 		nitro.Image = Image;
 		nitro.Sound = Sound;
 		nitro.CoolDown = CoolDown;
+		nitro.Input = Input;*/
 
 		return nitro;
 	}

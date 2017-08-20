@@ -12,10 +12,6 @@ public class CaravanSpawner : MonoBehaviour
 
     public List<GameObject> caravans { get; set; }
 
-	void Start()
-	{
-
-	}
 
 	GameObject SpawnCaravan(Transform transform, int playerId)
 	{
@@ -33,11 +29,14 @@ public class CaravanSpawner : MonoBehaviour
         // Add caravan setup here
         newCaravan.transform.rotation.Set(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
 
-        GameManager.instance.players[playerId - 1].SetAbilityController(newCaravan.GetComponent<AbilityController>());
+		var playerInfo = GameManager.instance.players[playerId - 1];
+		playerInfo.SetAbilityController(newCaravan.GetComponent<AbilityController>());
 
         // Disable input
         newCaravan.GetComponent<CaravanInput>().DisableInput();
-        
+		newCaravan.GetComponentInChildren<CaravanCollisionHandler>().SetOwner(playerId);
+		SpawnCaravanInventory(playerId, newCaravan.GetComponentInChildren<CaravanInventoryView>());
+
         return newCaravan;
     }
 
@@ -79,4 +78,21 @@ public class CaravanSpawner : MonoBehaviour
         // Slowly come to a stop
         caravans[playerId].GetComponent<MotionControl>().AccelerateToward(new Vector3(0, 0, 0));
     }
+
+	private void SpawnCaravanInventory(int playerId, CaravanInventoryView caravanItemView)
+	{
+		if(caravanItemView == null)
+		{
+			return;
+		}
+
+		// TODO: spawn jalapenos
+
+		// spawn crates last so they are last to go
+		for(int i = 0; i < GameManager.instance.players[playerId - 1].nbCrates; ++i)
+		{
+			caravanItemView.AddItem(CaravanInventoryView.ItemTypes.Crate);
+		}
+		
+	}
 }

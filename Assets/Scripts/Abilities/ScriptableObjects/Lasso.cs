@@ -15,12 +15,14 @@ public class Lasso : Ability
 			Debug.Log ("Created lasso");
 		}
 
-		lasso.AbilityId = Id;
+		lasso.Ability = this;
+		/*lasso.AbilityId = Id;
 		lasso.Name = Name;
 		lasso.Cost = Cost;
 		lasso.Image = Image;
 		lasso.Sound = Sound;
 		lasso.CoolDown = CoolDown;
+		lasso.Input = Input;*/
 
 		return lasso;
 	}
