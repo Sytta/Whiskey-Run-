@@ -4,20 +4,115 @@ using UnityEngine;
 
 public class CaravanInventoryView : MonoBehaviour {
 	[SerializeField]
-	List<Transform> itemPositions;
+	List<Transform> itemPositions; // Only used for item positions
+	[SerializeField]
+	Transform ItemDropSpawnPoint;
+	[Header("Prefabs")]
+	[SerializeField]
+	GameObject cratePrefab;
+	[SerializeField]
+	GameObject jalapenosPrefap;
 
-	public void AddItem()
+	Dictionary<ItemTypes, List<Transform>> slotsByItemType = new Dictionary<ItemTypes, List<Transform>>();
+
+	public enum ItemTypes
 	{
-		// TODO: Get next free item position and spawn item
+		Crate,
+		Jalapenos
 	}
 
-	public void RemoveItem()
+	private void Start()
 	{
-		// TODO: find item position and remove it from caravan
+		slotsByItemType.Add(ItemTypes.Crate, new List<Transform>());
+		slotsByItemType.Add(ItemTypes.Jalapenos, new List<Transform>());
 	}
 
-	public void DropItem()
+	public void AddItem(ItemTypes itemType)
 	{
-		// TODO: remove the item while spawning a physics version that falls off the caravan.
+		var slot = getFreeInventorySlot();
+		var item = getItemPrefab(itemType);
+		if (slot && item)
+		{
+			Instantiate(item, slot, false);
+			slotsByItemType[itemType].Add(slot);
+		}
+	}
+
+	/// <summary>
+	/// Remove an item from inside the cart
+	/// </summary>
+	/// <param name="itemType">the type of item to remove</param>
+	/// <returns>true if item was removed</returns>
+	public bool RemoveItem(ItemTypes itemType)
+	{
+		if(slotsByItemType[itemType].Count > 0)
+		{
+			Destroy(slotsByItemType[itemType][0].GetChild(0).gameObject);
+			slotsByItemType[itemType].RemoveAt(0);
+			return true;
+		}
+		return false;
+	}
+
+	public void DropItem(ItemTypes itemType)
+	{
+		var item = getItemPrefab(itemType);
+		if (item != null && RemoveItem(itemType))
+		{
+			var droppedItem = Instantiate(item, ItemDropSpawnPoint.position, ItemDropSpawnPoint.rotation);
+			var itemPhysics = droppedItem.GetComponent<Rigidbody>();
+			if (itemPhysics)
+			{
+				itemPhysics.isKinematic = false;
+				itemPhysics.useGravity = true;
+				itemPhysics.AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
+			}
+			// TODO: spawn a physics version of the item that falls off the caravan.
+
+		}
+	}
+
+	GameObject getItemPrefab(ItemTypes type)
+	{
+		switch (type)
+		{
+			case ItemTypes.Crate:
+				return cratePrefab;
+			case ItemTypes.Jalapenos:
+				return jalapenosPrefap;
+			default:
+				return null;
+		}
+	}
+
+	Transform getFreeInventorySlot()
+	{
+		foreach(var itemSlot in itemPositions)
+		{
+			if(itemSlot.childCount == 0)
+			{
+				return itemSlot;
+			}
+		}
+		return null;
+	}
+
+	/// <summary>
+	/// Using this for debug only, remove asap
+	/// </summary>
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			AddItem(ItemTypes.Crate);
+		}
+		if (Input.GetKeyDown(KeyCode.C))
+		{
+			RemoveItem(ItemTypes.Crate);
+		}
+		if (Input.GetKeyDown(KeyCode.X))
+		{
+			DropItem(ItemTypes.Crate);
+		}
 	}
 }
