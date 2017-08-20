@@ -89,7 +89,7 @@ public class CaravanSpawner : MonoBehaviour
 		// TODO: spawn jalapenos
 
 		// spawn crates last so they are last to go
-		for(int i = 0; i < GameManager.instance.players[playerId - 1].nbCrates; ++i)
+		for(int i = 0; i < GameManager.instance.players[playerId - 1].Abilities["Crate"]; ++i)
 		{
 			caravanItemView.AddItem(CaravanInventoryView.ItemTypes.Crate);
 		}
