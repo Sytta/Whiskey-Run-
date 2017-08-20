@@ -67,8 +67,6 @@ public class CaravanInventoryView : MonoBehaviour {
 				itemPhysics.useGravity = true;
 				itemPhysics.AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
 			}
-			// TODO: spawn a physics version of the item that falls off the caravan.
-
 		}
 	}
 
