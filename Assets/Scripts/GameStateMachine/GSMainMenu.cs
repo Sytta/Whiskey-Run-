@@ -26,12 +26,22 @@ public partial class GameStateMachine : MonoBehaviour
                 SceneManager.LoadScene("Boot");
 
                 SceneManager.sceneLoaded += OnSceneLoaded;
+            } else
+            {
+                Initialize();
             }
+            
+        }
+
+        public void Initialize()
+        {
+            owner.currentState = this;
             mainMenu = Instantiate(GameManager.instance.PrefabManager.MainMenuPrefab);
             startGame = mainMenu.GetComponentInChildren<Button>();
+            GameManager.instance.AudioService.PlayMusic("Menu");
+            startGame.onClick.RemoveAllListeners();
             startGame.onClick.AddListener(OnClickedPlay);
-			GameManager.instance.AudioService.PlayMusic("Menu");
-			Debug.Log("In main menu");
+            Debug.Log("In main menu");
         }
 
 		public override void OnExit()
@@ -60,6 +70,7 @@ public partial class GameStateMachine : MonoBehaviour
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             Debug.Log("OnSceneLoaded: " + scene.name);
+            Initialize();
                 
         }
 
