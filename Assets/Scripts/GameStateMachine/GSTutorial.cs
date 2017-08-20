@@ -23,7 +23,8 @@ public partial class GameStateMachine : MonoBehaviour
             Debug.Log("Going from Tutorial to RaceSetup");
             owner.currentState = this;
             // Show the tutorial
-            OnClickedPlay();
+            //OnClickedPlay();
+			RunState();
         }
 
 		public override void OnExit()
@@ -36,8 +37,10 @@ public partial class GameStateMachine : MonoBehaviour
 			switch (currentState)
 			{
 			case State.CONTROLS:
+				Instantiate (GameManager.instance.PrefabManager.Controls);
 				break;
 			case State.TUTORIAL:
+				Instantiate (GameManager.instance.PrefabManager.Tutorial);
 				break;
 			case State.END:
 				OnClickedPlay ();
@@ -54,7 +57,7 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnUpdate(float deltaTime)
 		{
 			// nothing for now.
-			if (Input.GetAxis ("AAbility_P1") > 0.0f || Input.GetAxis ("AAbility_P2") > 0.0f || Input.GetKeyDown (KeyCode.Return))
+			if (Input.GetAxis ("AAbility_P1") > 0.0f || Input.GetAxis ("AAbility_P2") > 0.0f)
 			{
 				if (canControl)
 				{

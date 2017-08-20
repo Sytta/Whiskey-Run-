@@ -47,7 +47,7 @@ public partial class GameStateMachine : MonoBehaviour
 		public override void OnUpdate(float deltaTime)
 		{
             // nothing for now.
-			if (Input.GetAxis ("AAbility_P1") > 0.0f || Input.GetAxis ("AAbility_P2") > 0.0f || Input.GetKeyDown(KeyCode.Return))
+			if (Input.GetAxis ("AAbility_P1") > 0.0f || Input.GetAxis ("AAbility_P2") > 0.0f)
 			{
 				GameObject selectedButton = mainMenu.GetComponent<MainMenu> ().buttons [
 					mainMenu.GetComponent<MainMenu> ().selectedButton];
