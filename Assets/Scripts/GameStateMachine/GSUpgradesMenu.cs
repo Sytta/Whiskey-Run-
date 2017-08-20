@@ -21,6 +21,12 @@ public partial class GameStateMachine : MonoBehaviour
             // Show the tutorial
             owner.currentState = this;
 			Shop = Instantiate (GameManager.instance.PrefabManager.Shop);
+
+            // Disable ability controller
+            for (int i = 0; i < GameManager.instance.caravanSpanwer.caravans.Count; i++)
+            {
+                GameManager.instance.caravanSpanwer.caravans[i].GetComponent<AbilityController>().enabled = false;
+            }
         }
 
         public override void OnExit()
@@ -29,6 +35,12 @@ public partial class GameStateMachine : MonoBehaviour
 			Destroy(Shop);
 			readyPlayer1 = false;
 			readyPlayer2 = false;
+
+            // Enable ability controller
+            for (int i = 0; i < GameManager.instance.caravanSpanwer.caravans.Count; i++)
+            {
+                GameManager.instance.caravanSpanwer.caravans[i].GetComponent<AbilityController>().enabled = true;
+            }
         }
 
         public override void OnUpdate(float deltaTime)
