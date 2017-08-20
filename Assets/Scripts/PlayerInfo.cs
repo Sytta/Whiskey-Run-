@@ -37,9 +37,6 @@ public class PlayerInfo
     {
         abilityController = ab;
 
-		// Debugging
-		PurchaseAbility ("Nitro");
-
 		abilityController.SetUpAbilities (Abilities);
     }
 }

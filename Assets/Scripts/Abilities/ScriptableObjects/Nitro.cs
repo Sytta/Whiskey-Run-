@@ -14,6 +14,7 @@ public class Nitro : Ability
 			Debug.Log ("Created nitro");
 		}
 
+		nitro.AbilityId = Id;
 		nitro.Name = Name;
 		nitro.Cost = Cost;
 		nitro.Image = Image;

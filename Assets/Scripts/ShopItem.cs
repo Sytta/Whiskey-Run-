@@ -12,12 +12,16 @@ public class ShopItem : MonoBehaviour
 	[SerializeField] private Image controls;
 	[SerializeField] private GameObject locked;
 
-	public void SetInfo(string name, string desc, int cost, Sprite image)
+	public void SetInfo(string name, string desc, int cost, Sprite image,
+		Sprite controls, bool locked)
 	{
 		SetName (name);
 		SetDescription (desc);
 		SetCost (cost);
 		SetImage (image);
+		SetControls (controls);
+
+		ToggleLock (locked);
 	}
 
 	public void SetName(string name)
@@ -38,6 +42,22 @@ public class ShopItem : MonoBehaviour
 	public void SetImage(Sprite image)
 	{
 		this.image.sprite = image;
+	}
+
+	public void SetControls(Sprite image)
+	{
+		if (image == null)
+		{
+			this.controls.gameObject.SetActive (false);
+			return;
+		}
+
+		this.controls.sprite = image;
+	}
+
+	public void ToggleLock(bool enable)
+	{
+		locked.SetActive (enable);
 	}
 }
 

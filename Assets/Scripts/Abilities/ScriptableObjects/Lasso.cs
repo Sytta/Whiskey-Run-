@@ -15,6 +15,7 @@ public class Lasso : Ability
 			Debug.Log ("Created lasso");
 		}
 
+		lasso.AbilityId = Id;
 		lasso.Name = Name;
 		lasso.Cost = Cost;
 		lasso.Image = Image;

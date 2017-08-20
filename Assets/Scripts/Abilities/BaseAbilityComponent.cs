@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BaseAbilityComponent : MonoBehaviour
 {
+	[HideInInspector] public string AbilityId { get; set; }
 	[HideInInspector] public string Name { get; set; }
 	[HideInInspector] public float Cost { get; set; }
 	[HideInInspector] public Sprite Image { get; set; }

@@ -15,23 +15,28 @@ public class ShopController : MonoBehaviour
 
 			for (int j = 0; j < GameManager.instance.AbilitiesDatabase.Count; j++)
 			{
-				int abilityIndex = j;
-
-				GameObject item = Instantiate (shopItemPrefab, playerShop [i].transform);
-				item.name = GameManager.instance.AbilitiesDatabase [j].Name;
-
-				item.GetComponent<ShopItem> ().SetInfo
-				(
-					GameManager.instance.AbilitiesDatabase [j].Name,
-					GameManager.instance.AbilitiesDatabase [j].Description,
-					GameManager.instance.AbilitiesDatabase [j].Cost,
-					GameManager.instance.AbilitiesDatabase [j].Image
-				);
-
-				item.GetComponent<Button> ().onClick.AddListener (delegate
+				if (GameManager.instance.AbilitiesDatabase [j].Purchasable)
 				{
-					PurchaseItem (playerId, GameManager.instance.AbilitiesDatabase [abilityIndex].Name);
-				});
+					int abilityIndex = j;
+
+					GameObject item = Instantiate (shopItemPrefab, playerShop [i].transform);
+					item.name = GameManager.instance.AbilitiesDatabase [j].Name;
+
+					item.GetComponent<ShopItem> ().SetInfo
+					(
+						GameManager.instance.AbilitiesDatabase [j].Name,
+						GameManager.instance.AbilitiesDatabase [j].Description,
+						GameManager.instance.AbilitiesDatabase [j].Cost,
+						GameManager.instance.AbilitiesDatabase [j].Image,
+						GameManager.instance.AbilitiesDatabase [j].Controls,
+						GameManager.instance.AbilitiesDatabase [j].Locked
+					);
+
+					item.GetComponent<Button> ().onClick.AddListener (delegate
+					{
+						PurchaseItem (playerId, GameManager.instance.AbilitiesDatabase [abilityIndex].Id);
+					});
+				}
 			}
 		}
 	}

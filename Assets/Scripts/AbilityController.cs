@@ -27,10 +27,11 @@ public class AbilityController : MonoBehaviour
 		
 		foreach (string ability in abilitiesMapping.Keys)
 		{
-			Ability abil = GameManager.instance.AbilitiesDatabase.Find (x => x.Name == ability);
-			Debug.Log (abilitiesComponents);
+			Ability abil = GameManager.instance.AbilitiesDatabase.Find (x => x.Id == ability);
+
 			if (ability != null)
 			{
+				Debug.Log (abil);
 				abilitiesComponents.Add(ability, abil.CreateComponent (this.gameObject));
 			}
 			else
