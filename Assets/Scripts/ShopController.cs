@@ -24,14 +24,10 @@ public class ShopController : MonoBehaviour
 
 		for (int i = 0; i < playerShop.Length; i++)
 		{
-			int playerId = i;
-
 			for (int j = 0; j < GameManager.instance.AbilitiesDatabase.Count; j++)
 			{
 				if (GameManager.instance.AbilitiesDatabase [j].Purchasable)
 				{
-					int abilityIndex = j;
-
 					GameObject item = Instantiate (shopItemPrefab, playerShop [i].transform);
 					item.name = GameManager.instance.AbilitiesDatabase [j].Name;
 
@@ -46,11 +42,6 @@ public class ShopController : MonoBehaviour
 						GameManager.instance.AbilitiesDatabase [j].Controls,
 						GameManager.instance.AbilitiesDatabase [j].Locked
 					);
-
-					/*item.GetComponent<Button> ().onClick.AddListener (delegate
-					{
-						PurchaseItem (playerId, GameManager.instance.AbilitiesDatabase [abilityIndex].Id);
-					});*/
 				}
 			}
 		}
@@ -95,11 +86,25 @@ public class ShopController : MonoBehaviour
 		#region Buy
 		if (Input.GetKeyDown(KeyCode.Joystick1Button0)) // "A" button
 		{
-			PurchaseItem(0, items[0][selectedItem[0]].AbilityId);
+			if (VerifyCanPurchase(0, items[0][selectedItem[0]].AbilityId))
+			{
+				PurchaseItem(0, items[0][selectedItem[0]].AbilityId);
+			}
+			else
+			{
+				Debug.Log("Cannot purchase item : " + items[0][selectedItem[0]].AbilityId);
+			}
 		}
 		if (Input.GetKeyDown(KeyCode.Joystick2Button0)) // "A" button
 		{
-			PurchaseItem(1, items[1][selectedItem[1]].AbilityId);
+			if (VerifyCanPurchase(1, items[1][selectedItem[1]].AbilityId))
+			{
+				PurchaseItem(1, items[1][selectedItem[1]].AbilityId);
+			}
+			else
+			{
+				Debug.Log("Cannot purchase item : " + items[1][selectedItem[1]].AbilityId);
+			}
 		}
 		#endregion
 	}
@@ -150,6 +155,20 @@ public class ShopController : MonoBehaviour
 		}
 	}
 	#endregion
+
+	bool VerifyCanPurchase(int playerId, string ability)
+	{
+		Ability ab = GameManager.instance.AbilitiesDatabase.Find (x => x.Id == ability);
+		if (ab == null)
+			return false;
+		if (ab.Locked)
+			return false;
+		if (ab.Cost > GameManager.instance.players [playerId].money)
+			return false;
+
+		return true;
+		
+	}
 
 	void PurchaseItem(int playerId, string ability)
 	{
