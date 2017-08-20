@@ -23,18 +23,21 @@ public partial class GameStateMachine : MonoBehaviour
                 SceneManager.LoadScene("Scene_Race01");
 
                 SceneManager.sceneLoaded += OnSceneLoaded;
+            } else
+            {
+                Initialize();
             }
 
         }
 
-        // called second
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        void Initialize()
         {
             // Show Racing UI
             if (GameManager.instance.racingUI != null)
             {
                 Destroy(GameManager.instance.racingUI);
             }
+
             GameManager.instance.racingUI = Instantiate(GameManager.instance.PrefabManager.RacingUI);
 
             GameManager.instance.racingUI.GetComponent<RacingUI>().DisableCountDown();
@@ -44,6 +47,13 @@ public partial class GameStateMachine : MonoBehaviour
             GameManager.instance.caravanSpanwer.Initialize();
 
             OnSetupFinished();
+        }
+
+        // called second
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+
+            Initialize();
 
             Debug.Log("OnSceneLoaded: " + scene.name);
         }
