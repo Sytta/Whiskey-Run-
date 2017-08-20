@@ -19,6 +19,12 @@ public partial class GameStateMachine : MonoBehaviour
 		{
             owner.currentState = this;
 
+            // Disable ability controller
+            for (int i = 0; i < GameManager.instance.caravanSpanwer.caravans.Count; i++)
+            {
+                GameManager.instance.caravanSpanwer.caravans[i].GetComponent<AbilityController>().enabled = false;
+            }
+
             playerInfos = GameManager.instance.players;
 
             // show results
