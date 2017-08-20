@@ -73,8 +73,8 @@ public partial class GameStateMachine : MonoBehaviour
                 playerFinished[player] = true;
             }
 			// Once both players finish, change state
-			if (playerFinished[0] && playerFinished[1])
-            //if (playerFinished[0])
+			//if (playerFinished[0] && playerFinished[1])
+            if (playerFinished[0])
             {
                 owner.GoToState("ShowRaceResults");
             }
