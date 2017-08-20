@@ -25,29 +25,27 @@ public partial class GameStateMachine : MonoBehaviour
                 SceneManager.sceneLoaded += OnSceneLoaded;
             }
 
-            // Show Racing UI
-            if (GameManager.instance.racingUI != null)
-            {
-                Destroy(GameManager.instance.racingUI);
-            }
-			GameManager.instance.racingUI = Instantiate(GameManager.instance.PrefabManager.RacingUI);
-
-            GameManager.instance.racingUI.GetComponent<RacingUI>().DisableCountDown();
-
-			// Find caravan spawner and Spawn caravans
-			GameManager.instance.caravanSpanwer = GameObject.FindObjectOfType<CaravanSpawner>();
-            GameManager.instance.caravanSpanwer.Initialize();
-
-            OnSetupFinished();
-
         }
 
         // called second
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
+            // Show Racing UI
+            if (GameManager.instance.racingUI != null)
+            {
+                Destroy(GameManager.instance.racingUI);
+            }
+            GameManager.instance.racingUI = Instantiate(GameManager.instance.PrefabManager.RacingUI);
+
+            GameManager.instance.racingUI.GetComponent<RacingUI>().DisableCountDown();
+
+            // Find caravan spawner and Spawn caravans
+            GameManager.instance.caravanSpanwer = GameObject.FindObjectOfType<CaravanSpawner>();
+            GameManager.instance.caravanSpanwer.Initialize();
+
+            OnSetupFinished();
+
             Debug.Log("OnSceneLoaded: " + scene.name);
-            if (scene.name == "Scene_Race01")
-                owner.GoToState("Tutorial");
         }
 
         public override void OnExit()
