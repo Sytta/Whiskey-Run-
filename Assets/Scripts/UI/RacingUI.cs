@@ -11,11 +11,16 @@ public class RacingUI : MonoBehaviour
 	void Start()
 	{
 		SetUpAbilities ();
-        for (int i = 0; i < playerCurrency.Length; i++)
-        {
-            playerCurrency[i].text = GameManager.instance.players[i].money.ToString() + "$";
-        }
+		SetUpCurrency ();
     }
+
+	private void SetUpCurrency()
+	{
+		for (int i = 0; i < playerCurrency.Length; i++)
+		{
+			playerCurrency[i].text = GameManager.instance.players[i].money.ToString();
+		}
+	}
 
 	private void SetUpAbilities()
 	{
