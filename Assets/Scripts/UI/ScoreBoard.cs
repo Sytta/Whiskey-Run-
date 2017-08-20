@@ -9,14 +9,13 @@ public class ScoreBoard : MonoBehaviour
 	[SerializeField] Text[] nbCrates;
 	[SerializeField] Text[] cratesBonus;
 	[SerializeField] Text[] total;
-	[SerializeField] Button continueButton;
-	[SerializeField] Button quitButton;
+	[SerializeField] public GameObject[] buttons;
+	public int selectedButton;
 
     [SerializeField] int cratePrice = 100;
 
     public void Initialize()
     {
-
         for (int i = 0; i < GameManager.instance.players.Length; i ++)
         {
             // Set position
@@ -40,7 +39,22 @@ public class ScoreBoard : MonoBehaviour
             SetTotalIncome(i, GameManager.instance.players[i].totalIncome);
 
         }
+
+		selectedButton = 0;
+		UpdateSeletedButtonDisplay ();
     }
+
+	void Update()
+	{
+		if (Input.GetAxis ("Horizontal_P1") > 0.0f || Input.GetAxis ("Horizontal_P2") > 0.0f)
+		{
+			IncrementSelectedButtonIndex ();
+		}
+		if (Input.GetAxis ("Horizontal_P1") < 0.0f || Input.GetAxis ("Horizontal_P2") < 0.0f)
+		{
+			DecrementSelectedButtonIndex ();
+		}
+	}
 
     public void SetPosition(int playerIndex, int position)
 	{
@@ -72,5 +86,38 @@ public class ScoreBoard : MonoBehaviour
         GameManager.instance.players[playerIndex].money += income;
         Debug.Log("Income: " + GameManager.instance.players[playerIndex].totalIncome + " Money: " + GameManager.instance.players[playerIndex].money);
     }
+
+	void DecrementSelectedButtonIndex()
+	{
+		if (selectedButton > 0)
+		{
+			selectedButton--;
+			UpdateSeletedButtonDisplay ();
+		}
+	}
+
+	void IncrementSelectedButtonIndex()
+	{
+		if (selectedButton < buttons.Length - 1)
+		{
+			selectedButton++;
+			UpdateSeletedButtonDisplay ();
+		}
+	}
+
+	void UpdateSeletedButtonDisplay()
+	{
+		for (int i = 0; i < buttons.Length; i++)
+		{
+			if (i == selectedButton)
+			{
+				buttons [i].GetComponent<ButtonController> ().EnableSelected();
+			}
+			else
+			{
+				buttons [i].GetComponent<ButtonController> ().DisableSelected();
+			}
+		}
+	}
 }
 

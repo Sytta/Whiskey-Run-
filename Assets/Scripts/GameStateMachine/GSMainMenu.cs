@@ -9,17 +9,13 @@ public partial class GameStateMachine : MonoBehaviour
 {
 	private class GSMainMenu : GameState
 	{
-        Button startGame;
         GameObject mainMenu;
-
 
         public GSMainMenu(GameStateMachine owner) : base(owner) { }
 
 		public override void OnEnter()
 		{
             // Show Main Menu ui
-            /*Debug.Log("Going from MainMenu to Tutorial");
-            OnClickedPlay();*/
             owner.currentState = this;
             if (SceneManager.GetActiveScene().name != "Boot")
             {
@@ -28,8 +24,6 @@ public partial class GameStateMachine : MonoBehaviour
                 SceneManager.sceneLoaded += OnSceneLoaded;
             }
             mainMenu = Instantiate(GameManager.instance.PrefabManager.MainMenuPrefab);
-            startGame = mainMenu.GetComponentInChildren<Button>();
-            startGame.onClick.AddListener(OnClickedPlay);
 			GameManager.instance.AudioService.PlayMusic("Menu");
 			Debug.Log("In main menu");
         }
@@ -38,15 +32,21 @@ public partial class GameStateMachine : MonoBehaviour
 		{
             // Hide the main menu ui
             Debug.Log("Destroy main menu");
-            startGame.onClick.RemoveAllListeners();
             Destroy(mainMenu);
-            Destroy(startGame);
-           
 		}
 
 		public override void OnUpdate(float deltaTime)
 		{
             // nothing for now.
+			if (Input.GetAxis ("AAbility_P1") > 0.0f || Input.GetAxis ("AAbility_P2") > 0.0f || Input.GetKeyDown(KeyCode.Return))
+			{
+				GameObject selectedButton = mainMenu.GetComponent<MainMenu> ().buttons [
+					mainMenu.GetComponent<MainMenu> ().selectedButton];
+				if (selectedButton.name == "StartButton")
+					OnClickedPlay ();
+				else
+					Application.Quit ();
+			}
 		}
 
 		public void OnClickedPlay()
