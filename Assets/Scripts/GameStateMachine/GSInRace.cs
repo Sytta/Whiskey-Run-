@@ -39,7 +39,7 @@ public partial class GameStateMachine : MonoBehaviour
             {
                 GameObject caravan = GameManager.instance.caravanSpanwer.caravans[i];
                 int playerId = caravan.GetComponent<CaravanInput>().playerId - 1;
-                if (caravan.transform.position.x <= GameObject.FindGameObjectWithTag("goal").transform.position.x && !playerFinished[playerId])
+                if (caravan.transform.position.x >= GameObject.FindGameObjectWithTag("goal").transform.position.x && !playerFinished[playerId])
                 {
                     OnPlayerFinished(playerId);
                     Debug.Log("Player " + caravan.GetComponent<CaravanInput>().playerId + " finished!");
