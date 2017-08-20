@@ -6,6 +6,25 @@ public class RacingUI : MonoBehaviour
 {
 	[SerializeField] private Text[] playerCurrency;
 	[SerializeField] private Text[] countDown;
+	[SerializeField] private GameObject[] playerAbilities;
+
+	void Start()
+	{
+		SetUpAbilities ();
+	}
+
+	private void SetUpAbilities()
+	{
+		for (int i = 0; i < playerAbilities.Length; i++)
+		{
+			foreach (BaseAbilityComponent comp in GameManager.instance.players[i].abilityController.components)
+			{
+				GameObject ab = Instantiate (GameManager.instance.PrefabManager.AbilitySlot, playerAbilities [i].transform);
+				ab.GetComponent<AbilitySlot> ().SetComponent (comp);
+				ab.GetComponent<AbilitySlot> ().playerId = i;
+			}
+		}
+	}
 
     private void Start()
     {

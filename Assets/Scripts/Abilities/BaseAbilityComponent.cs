@@ -7,14 +7,7 @@ public class BaseAbilityComponent : MonoBehaviour
 	[HideInInspector] public Ability Ability { get; set; }
 	//[HideInInspector] public int Charges { get; set; }
 	public int PlayerId;
-	/*[HideInInspector] public string AbilityId { get; set; }
-	[HideInInspector] public string Name { get; set; }
-	[HideInInspector] public float Cost { get; set; }
-	[HideInInspector] public Sprite Image { get; set; }
-	[HideInInspector] public AudioClip Sound { get; set; }
-	[HideInInspector] public float CoolDown { get; set; }
-	[HideInInspector] public int[] Input { get; set; }*/
-	protected float currentCoolDownTimer;
+	public float currentCoolDownTimer;
 
 	public virtual void OnSetup() { }
 

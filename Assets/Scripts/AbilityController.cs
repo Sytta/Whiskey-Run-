@@ -8,7 +8,7 @@ public class AbilityController : MonoBehaviour
 {
 	public int PlayerId;
     // Reference to Playerinfo's ability selection
-	List<BaseAbilityComponent> components;
+	public List<BaseAbilityComponent> components;
 
 	void Start()
     { 

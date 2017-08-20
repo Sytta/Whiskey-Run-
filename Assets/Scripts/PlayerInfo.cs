@@ -10,7 +10,7 @@ public class PlayerInfo
     public bool isWinner { get; set; }
     public int totalIncome { get; set; }
     public Dictionary<string, int> Abilities;
-    AbilityController abilityController;
+    public AbilityController abilityController;
 
 	public PlayerInfo(int id, int money, int nbCrates)
 	{
@@ -19,6 +19,7 @@ public class PlayerInfo
         this.nbCrates = nbCrates;
 		Abilities = new Dictionary<string, int> ();
         this.isWinner = false;
+		PurchaseAbility ("Lasso");
 	}
 
 	public void PurchaseAbility (string ability)
