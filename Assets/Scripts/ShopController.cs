@@ -6,6 +6,7 @@ public class ShopController : MonoBehaviour
 {
 	[SerializeField] GameObject shopItemPrefab;
 	[SerializeField] GameObject[] playerShop;
+	[SerializeField] GameObject[] selectedItem;
 
 	void Start()
 	{
