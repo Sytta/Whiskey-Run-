@@ -61,6 +61,7 @@ public class MotionControl : MonoBehaviour {
 	/// <param name="duration">How long this effect should  last</param>
 	public void AddModifier(float accelerationFactorMod, float maxSpeedFactorMod, float duration)
 	{
+        Debug.Log("Accelerating!");
 		var newMod = new Modifier(accelerationFactorMod, maxSpeedFactorMod, duration);
 		currentModifiers.Add(newMod);
 		newMod.ApplyTo(this);
