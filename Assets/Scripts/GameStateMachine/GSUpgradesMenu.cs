@@ -38,8 +38,8 @@ public partial class GameStateMachine : MonoBehaviour
 
         public void OnClickedPlay()
         {
-			Debug.Log ("Load Scene");
-			owner.GoToState("SetupRace");
+			Debug.Log ("Going to RoundsOver");
+			owner.GoToState("RoundsOver");
 		}
     }
 }

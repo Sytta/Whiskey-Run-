@@ -54,9 +54,8 @@ public partial class GameStateMachine : MonoBehaviour
 		{
 			if (!playerFinished[player])
             {
-                playerFinished[player] = true;
-                // Disable player caravan input
-                GameManager.instance.caravanSpanwer.DisableCaravanInput(player); // doesn't work
+                // Disable player caravan input and slowly come to a stop
+                GameManager.instance.caravanSpanwer.DisableCaravanInput(player); 
 
                 // If the other player hasn't finished
                 if (!playerFinished[(player + 1) % 2])
@@ -66,14 +65,19 @@ public partial class GameStateMachine : MonoBehaviour
                     GameManager.instance.players[(player + 1) % 2].isWinner = false;
                     Debug.Log("The winner is player " + (player + 1));
                     Debug.Log("The looser is player " + ((player + 1) % 2 + 1));
-                }
+
+                    // Show win text
+                    GameManager.instance.racingUI.GetComponent<RacingUI>().SetWinner(player, "First place!");
+                } 
+
+                playerFinished[player] = true;
             }
 			// Once both players finish, change state
 			if (playerFinished[0] && playerFinished[1])
             //if (playerFinished[0])
-            { 				
+            {
                 owner.GoToState("ShowRaceResults");
-			}
+            }
 		}
 	}
 }

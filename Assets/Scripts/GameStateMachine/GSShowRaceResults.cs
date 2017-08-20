@@ -9,17 +9,19 @@ public partial class GameStateMachine : MonoBehaviour
 	{
 		public GSShowRaceResults(GameStateMachine owner) : base(owner) { }
 
-		public override void OnEnter()
+        private GameObject ScoreBoard;
+
+        public override void OnEnter()
 		{
             owner.currentState = this;
             // show results
-
-            OnBothPlayersReady();
+            // ScoreBoard = Instantiate(GameManager.instance.PrefabManager.ScoreBoard);
         }
 
 		public override void OnExit()
 		{
-			// Hide results
+            // Hide results
+            Destroy(ScoreBoard);
 		}
 
 		public override void OnUpdate(float deltaTime)
