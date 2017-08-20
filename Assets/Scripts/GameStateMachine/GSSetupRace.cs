@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public partial class GameStateMachine : MonoBehaviour
 {
@@ -17,7 +18,18 @@ public partial class GameStateMachine : MonoBehaviour
             // Ready level
             owner.currentState = this;
 
+            if (SceneManager.GetActiveScene().name != "Scene_Race01")
+            {
+                SceneManager.LoadScene("Scene_Race01");
+
+                SceneManager.sceneLoaded += OnSceneLoaded;
+            }
+
             // Show Racing UI
+            if (GameManager.instance.racingUI != null)
+            {
+                Destroy(GameManager.instance.racingUI);
+            }
 			GameManager.instance.racingUI = Instantiate(GameManager.instance.PrefabManager.RacingUI);
 
             GameManager.instance.racingUI.GetComponent<RacingUI>().DisableCountDown();
@@ -30,7 +42,15 @@ public partial class GameStateMachine : MonoBehaviour
 
         }
 
-		public override void OnExit()
+        // called second
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            Debug.Log("OnSceneLoaded: " + scene.name);
+            if (scene.name == "Scene_Race01")
+                owner.GoToState("Tutorial");
+        }
+
+        public override void OnExit()
 		{
             // ?
         }

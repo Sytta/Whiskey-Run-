@@ -7,6 +7,7 @@ public class PlayerInfo
     public int id { get; set; }
     public int money { get; set; }
     public int nbCrates { get; set; }
+    public bool isWinner { get; set; }
     public Dictionary<string, int> Abilities;
     AbilityController abilityController;
 
@@ -16,6 +17,7 @@ public class PlayerInfo
         this.money = money;
         this.nbCrates = nbCrates;
 		Abilities = new Dictionary<string, int> ();
+        this.isWinner = false;
 	}
 
 	public void PurchaseAbility (string ability)
@@ -40,5 +42,4 @@ public class PlayerInfo
 
 		abilityController.SetUpAbilities (Abilities);
     }
-
 }

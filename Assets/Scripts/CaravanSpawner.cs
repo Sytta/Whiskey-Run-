@@ -14,7 +14,7 @@ public class CaravanSpawner : MonoBehaviour
 
 	void Start()
 	{
-		DontDestroyOnLoad (this.gameObject);
+
 	}
 
 	GameObject SpawnCaravan(Transform transform, int playerId)
@@ -26,7 +26,9 @@ public class CaravanSpawner : MonoBehaviour
         Debug.Log("Caravan " + playerId + " Rotation: " + newCaravan.transform.rotation.eulerAngles);
 
         // whacky way of setting the viewport for splitscreen
-        newCaravan.GetComponentInChildren<Camera>().rect = new Rect(0.5f - 0.5f * (playerId - 1), 0, 0.5f, 1);
+        // 1 -> 0
+        // 2 -> 0.5
+        newCaravan.GetComponentInChildren<Camera>().rect = new Rect(0.5f * (playerId - 1), 0, 0.5f, 1);
 
         // Add caravan setup here
         newCaravan.transform.rotation.Set(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
@@ -42,10 +44,7 @@ public class CaravanSpawner : MonoBehaviour
 	// Use this for initialization
 	public void Initialize ()
 	{
-		while (caravans != null && caravans.Count != 0)
-		{
-			Destroy (caravans [0]);
-		}
+		DestroyCaravans ();
 
         caravans = new List<GameObject>();
         for (int i = 0; i < GameManager.instance.nbPlayers; i++)
@@ -56,6 +55,9 @@ public class CaravanSpawner : MonoBehaviour
 
      public void DestroyCaravans()
     {
+		if (caravans == null)
+			return;
+		
         for (int i = 0; i < caravans.Count; i ++)
         {
             Destroy(caravans[i]);
@@ -68,5 +70,12 @@ public class CaravanSpawner : MonoBehaviour
         {
             caravans[i].GetComponent<CaravanInput>().EnableInput();
         }
+    }
+
+    public void DisableCaravanInput(int playerId)
+    {
+        caravans[playerId].GetComponent<CaravanInput>().DisableInput();
+        Debug.Log("Disabled input of Player " + (playerId + 1));
+        caravans[playerId].GetComponent<MotionControl>().currentSpeed = 0;
     }
 }
