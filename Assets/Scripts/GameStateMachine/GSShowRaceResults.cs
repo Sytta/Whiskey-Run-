@@ -25,6 +25,10 @@ public partial class GameStateMachine : MonoBehaviour
             scoreBoard = Instantiate(GameManager.instance.PrefabManager.ScoreBoard);
 
             scoreBoard.GetComponent<ScoreBoard>().Initialize();
+			for (int i = 0; i < GameManager.instance.nbPlayers; i++)
+			{
+				GameManager.instance.players [i].ResetCrates ();
+			}
 
             // Add listener
             buttons = scoreBoard.GetComponentsInChildren<Button>();
