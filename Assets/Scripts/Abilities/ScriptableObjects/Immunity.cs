@@ -14,12 +14,14 @@ public class Immunity : Ability
 			Debug.Log ("Created immunity");
 		}
 
-		immunity.AbilityId = Id;
+		immunity.Ability = this;
+		/*immunity.AbilityId = Id;
 		immunity.Name = Name;
 		immunity.Cost = Cost;
 		immunity.Image = Image;
 		immunity.Sound = Sound;
 		immunity.CoolDown = CoolDown;
+		immunity.Input = Input;*/
 
 		return immunity;
 	}

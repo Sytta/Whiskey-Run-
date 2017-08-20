@@ -6,18 +6,38 @@ using UnityEngine.UI;
 
 public class AbilityController : MonoBehaviour
 {
+	public int PlayerId;
     // Reference to Playerinfo's ability selection
 	Dictionary<string, BaseAbilityComponent> abilitiesComponents;
+	List<BaseAbilityComponent> components;
 
 	void Start()
 	{
 		abilitiesComponents = new Dictionary<string, BaseAbilityComponent> ();
+		components = new List<BaseAbilityComponent> ();
+	}
+
+	void Update()
+	{
+		foreach (BaseAbilityComponent comp in abilitiesComponents.Values)
+		{
+			foreach (string button in comp.Ability.Input)
+			{
+				if (Input.GetAxis (button + "_P" + PlayerId.ToString ()) > 0.0f)
+				{
+					comp.Use(new Vector3(0.0f, 0.0f, 0.0f));
+				}
+			}
+		}
 	}
 
     // Create all the abilities and call on setup on each of them
     void Setup()
 	{
-		
+		foreach (BaseAbilityComponent comp in abilitiesComponents.Values)
+		{
+			comp.OnSetup ();
+		}
 	}
 
 	public void SetUpAbilities(Dictionary<string, int> abilitiesMapping)
@@ -31,8 +51,10 @@ public class AbilityController : MonoBehaviour
 
 			if (ability != null)
 			{
-				Debug.Log (abil);
-				abilitiesComponents.Add(ability, abil.CreateComponent (this.gameObject));
+				BaseAbilityComponent comp = abil.CreateComponent (this.gameObject);
+				comp.PlayerId = this.PlayerId;
+				comp.Charges = abilitiesMapping [ability];
+				abilitiesComponents.Add(ability, comp);
 			}
 			else
 			{
@@ -44,5 +66,7 @@ public class AbilityController : MonoBehaviour
 		{
 			component.OnSetup ();
 		}
+
+		Setup ();
 	}
 }
