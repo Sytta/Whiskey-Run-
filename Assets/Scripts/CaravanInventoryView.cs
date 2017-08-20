@@ -94,23 +94,4 @@ public class CaravanInventoryView : MonoBehaviour {
 		}
 		return null;
 	}
-
-	/// <summary>
-	/// Using this for debug only, remove asap
-	/// </summary>
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			AddItem(ItemTypes.Crate);
-		}
-		if (Input.GetKeyDown(KeyCode.C))
-		{
-			RemoveItem(ItemTypes.Crate);
-		}
-		if (Input.GetKeyDown(KeyCode.X))
-		{
-			DropItem(ItemTypes.Crate);
-		}
-	}
 }
