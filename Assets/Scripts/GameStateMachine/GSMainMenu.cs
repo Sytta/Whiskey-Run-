@@ -44,8 +44,8 @@ public partial class GameStateMachine : MonoBehaviour
 					mainMenu.GetComponent<MainMenu> ().selectedButton];
 				if (selectedButton.name == "StartButton")
 					OnClickedPlay ();
-				//else
-					//Quit ();
+				else
+					Application.Quit ();
 			}
 		}
 
