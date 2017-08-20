@@ -21,7 +21,7 @@ public partial class GameStateMachine : MonoBehaviour
             // Show the tutorial
             owner.currentState = this;
 			Shop = Instantiate (GameManager.instance.PrefabManager.Shop);
-
+			GameManager.instance.AudioService.PlayMusic("Menu");
         }
 
         public override void OnExit()
