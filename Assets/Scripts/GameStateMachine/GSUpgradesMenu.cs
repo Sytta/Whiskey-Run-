@@ -13,6 +13,9 @@ public partial class GameStateMachine : MonoBehaviour
 		private GameObject Shop;
 		private Button[] start;
 
+		bool readyPlayer1 = false;
+		bool readyPlayer2 = false;
+
         public override void OnEnter()
         {
             // Show the tutorial
@@ -28,11 +31,26 @@ public partial class GameStateMachine : MonoBehaviour
 
         public override void OnUpdate(float deltaTime)
         {
-            // nothing for now.
-			if (Input.GetKeyDown (KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Space))
+            // Verify if players are ready.
+			if (Input.GetKeyDown (KeyCode.Joystick1Button7))
+			{
+				if (!readyPlayer1)
+				{
+					readyPlayer1 = true;
+					Shop.GetComponent<ShopController> ().SetReady (0);
+				}
+			}
+			if (Input.GetKeyDown (KeyCode.Joystick2Button7))
+			{
+				if (!readyPlayer2)
+				{
+					readyPlayer2 = true;
+					Shop.GetComponent<ShopController> ().SetReady (1);
+				}
+			}
+			if (readyPlayer1 && readyPlayer2)
 			{
 				OnClickedPlay ();
-
 			}
         }
 

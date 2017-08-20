@@ -7,6 +7,7 @@ public class ShopController : MonoBehaviour
 {
 	[SerializeField] GameObject shopItemPrefab;
 	[SerializeField] Text[] playerCurrency;
+	[SerializeField] GameObject[] playerReady;
 	[SerializeField] GameObject[] playerShop;
 	List<List<ShopItem>> items;
 	int[] selectedItem;
@@ -185,6 +186,12 @@ public class ShopController : MonoBehaviour
 	public void ClosePanel()
 	{
 		this.gameObject.SetActive (false);
+	}
+
+	public void SetReady(int playerIndex)
+	{
+		playerShop [playerIndex].SetActive (false);
+		playerReady [playerIndex].SetActive (true);
 	}
 }
 
