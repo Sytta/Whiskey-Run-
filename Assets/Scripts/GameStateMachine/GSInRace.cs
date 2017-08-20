@@ -45,6 +45,7 @@ public partial class GameStateMachine : MonoBehaviour
             {
                 GameObject caravan = GameManager.instance.caravanSpanwer.caravans[i];
                 int playerId = caravan.GetComponent<CaravanInput>().playerId - 1;
+
                 if ((caravan.transform.position - goalPosition).magnitude <= 40 && !playerFinished[playerId])
                 {
                     OnPlayerFinished(playerId);
