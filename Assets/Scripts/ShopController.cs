@@ -166,6 +166,8 @@ public class ShopController : MonoBehaviour
 			return false;
 		if (ab.Cost > GameManager.instance.players [playerId].money)
 			return false;
+		if (ab.Limit <= GameManager.instance.players [playerId].Abilities ["ability"])
+			return false;
 
 		return true;
 		
