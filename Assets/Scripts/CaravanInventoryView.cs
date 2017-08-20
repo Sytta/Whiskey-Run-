@@ -13,18 +13,15 @@ public class CaravanInventoryView : MonoBehaviour {
 	[SerializeField]
 	GameObject jalapenosPrefap;
 
-	Dictionary<ItemTypes, List<Transform>> slotsByItemType = new Dictionary<ItemTypes, List<Transform>>();
+	Dictionary<ItemTypes, List<Transform>> slotsByItemType = new Dictionary<ItemTypes, List<Transform>>() {
+		{ItemTypes.Crate, new List<Transform>()},
+		{ItemTypes.Jalapenos, new List<Transform>()}
+	};
 
 	public enum ItemTypes
 	{
 		Crate,
 		Jalapenos
-	}
-
-	private void Start()
-	{
-		slotsByItemType.Add(ItemTypes.Crate, new List<Transform>());
-		slotsByItemType.Add(ItemTypes.Jalapenos, new List<Transform>());
 	}
 
 	public void AddItem(ItemTypes itemType)
