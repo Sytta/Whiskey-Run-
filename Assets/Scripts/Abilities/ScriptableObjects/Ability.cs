@@ -16,6 +16,7 @@ public class Ability : ScriptableObject
 	public bool Locked;
 	public string[] Input;
 	public bool Consumable;
+	public int Limit;
 
 	public virtual BaseAbilityComponent CreateComponent(GameObject obj) { return null; }
 }

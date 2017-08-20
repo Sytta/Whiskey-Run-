@@ -20,7 +20,7 @@ public class NitroComponent : BaseAbilityComponent
 		Debug.Log ("Using nitro!");
 
         // Add speed to the caravan using it
-        GameManager.instance.caravanSpanwer.caravans[PlayerId - 1].GetComponent<MotionControl>().AddModifier(3f, 3f, 2f);
+        GameManager.instance.caravanSpanwer.caravans[PlayerId - 1].GetComponent<MotionControl>().AddModifier(5f, 5f, 2f);
 
 
         // Start cool down
