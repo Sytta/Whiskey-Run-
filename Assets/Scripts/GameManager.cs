@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] public GameStateMachine GameStateMachine;
     [SerializeField] public CaravanSpawner caravanSpanwer;
 	[SerializeField] public PrefabManager PrefabManager;
-
+	[SerializeField] public AudioService AudioService;
 
     [HideInInspector] public GameObject racingUI;
 
