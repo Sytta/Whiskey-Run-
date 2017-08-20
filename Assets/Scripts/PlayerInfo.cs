@@ -8,6 +8,7 @@ public class PlayerInfo
     public int money { get; set; }
     public int nbCrates { get; set; }
     public bool isWinner { get; set; }
+    public int totalIncome { get; set; }
     public Dictionary<string, int> Abilities;
     AbilityController abilityController;
 
