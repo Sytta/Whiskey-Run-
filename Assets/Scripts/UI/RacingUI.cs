@@ -11,7 +11,11 @@ public class RacingUI : MonoBehaviour
 	void Start()
 	{
 		SetUpAbilities ();
-	}
+        for (int i = 0; i < playerCurrency.Length; i++)
+        {
+            playerCurrency[i].text = GameManager.instance.players[i].money.ToString() + "$";
+        }
+    }
 
 	private void SetUpAbilities()
 	{
@@ -26,7 +30,7 @@ public class RacingUI : MonoBehaviour
 		}
 	}
 
-	public void InitCountDown(string text)
+    public void InitCountDown(string text)
 	{
 		for (int i = 0; i < countDown.Length; i++)
 		{

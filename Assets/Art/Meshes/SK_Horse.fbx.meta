@@ -1,0 +1,214 @@
+fileFormatVersion: 2
+guid: da8e649304c2c1a41a4140ceee98e8ee
+timeCreated: 1503248849
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CowboyHat
+    100002: Horse
+    100004: Horse_BackBody
+    100006: Horse_BackBody_crv
+    100008: Horse_BackBody_gr
+    100010: Horse_BackEnd
+    100012: Horse_BackKnee_crv
+    100014: Horse_BackKnee_crv 1
+    100016: Horse_BackKnee_gr
+    100018: Horse_BackKnee_gr 1
+    100020: Horse_BackKnee_R
+    100022: Horse_BackKnee_R1
+    100024: Horse_BackLeg_crv
+    100026: Horse_BackLeg_crv 1
+    100028: Horse_BackLeg_gr
+    100030: Horse_BackLeg_gr1
+    100032: Horse_BackLeg_R
+    100034: Horse_BackLeg_R1
+    100036: Horse_BackLeg_R_End
+    100038: Horse_BackLeg_R_End1
+    100040: Horse_BodyMiddle
+    100042: Horse_FrontBody
+    100044: Horse_FrontBody_crv
+    100046: Horse_FrontBody_gr
+    100048: Horse_FrontKnee_crv
+    100050: Horse_FrontKnee_crv 1
+    100052: Horse_FrontKnee_gr
+    100054: Horse_FrontKnee_gr 1
+    100056: Horse_FrontKnee_R
+    100058: Horse_FrontKnee_R1
+    100060: Horse_FrontLeg_crv
+    100062: Horse_FrontLeg_crv 1
+    100064: Horse_FrontLeg_gr
+    100066: Horse_FrontLeg_gr1
+    100068: Horse_FrontLeg_R
+    100070: Horse_FrontLeg_R1
+    100072: Horse_FrontLeg_R_End
+    100074: Horse_FrontLeg_R_End1
+    100076: Horse_Hat1
+    100078: Horse_Hat_crv
+    100080: Horse_Hat_end
+    100082: Horse_Hat_gr
+    100084: Horse_Head
+    100086: Horse_Head_end
+    100088: Horse_Hips_Mid
+    100090: Horse_MiddleBody_crv
+    100092: Horse_MiddleBody_gr
+    100094: Horse_Neck00
+    100096: Horse_Neck00_crv
+    100098: Horse_Neck00_gr
+    100100: Horse_Neck01
+    100102: Horse_Neck01_crv
+    100104: Horse_Neck01_gr
+    100106: Horse_Neck02
+    100108: Horse_Neck02_crv
+    100110: Horse_Neck02_gr
+    100112: Horse_Root
+    100114: Horse_Shoulder_Mid
+    100116: Horse_Tail00
+    100118: Horse_Tail00_crv
+    100120: Horse_Tail00_gr
+    100122: Horse_Tail01
+    100124: Horse_Tail01_crv
+    100126: Horse_Tail01_gr
+    100128: Horse_Tail_end
+    100130: //RootNode
+    100132: SM_Horse
+    400000: CowboyHat
+    400002: Horse
+    400004: Horse_BackBody
+    400006: Horse_BackBody_crv
+    400008: Horse_BackBody_gr
+    400010: Horse_BackEnd
+    400012: Horse_BackKnee_crv
+    400014: Horse_BackKnee_crv 1
+    400016: Horse_BackKnee_gr
+    400018: Horse_BackKnee_gr 1
+    400020: Horse_BackKnee_R
+    400022: Horse_BackKnee_R1
+    400024: Horse_BackLeg_crv
+    400026: Horse_BackLeg_crv 1
+    400028: Horse_BackLeg_gr
+    400030: Horse_BackLeg_gr1
+    400032: Horse_BackLeg_R
+    400034: Horse_BackLeg_R1
+    400036: Horse_BackLeg_R_End
+    400038: Horse_BackLeg_R_End1
+    400040: Horse_BodyMiddle
+    400042: Horse_FrontBody
+    400044: Horse_FrontBody_crv
+    400046: Horse_FrontBody_gr
+    400048: Horse_FrontKnee_crv
+    400050: Horse_FrontKnee_crv 1
+    400052: Horse_FrontKnee_gr
+    400054: Horse_FrontKnee_gr 1
+    400056: Horse_FrontKnee_R
+    400058: Horse_FrontKnee_R1
+    400060: Horse_FrontLeg_crv
+    400062: Horse_FrontLeg_crv 1
+    400064: Horse_FrontLeg_gr
+    400066: Horse_FrontLeg_gr1
+    400068: Horse_FrontLeg_R
+    400070: Horse_FrontLeg_R1
+    400072: Horse_FrontLeg_R_End
+    400074: Horse_FrontLeg_R_End1
+    400076: Horse_Hat1
+    400078: Horse_Hat_crv
+    400080: Horse_Hat_end
+    400082: Horse_Hat_gr
+    400084: Horse_Head
+    400086: Horse_Head_end
+    400088: Horse_Hips_Mid
+    400090: Horse_MiddleBody_crv
+    400092: Horse_MiddleBody_gr
+    400094: Horse_Neck00
+    400096: Horse_Neck00_crv
+    400098: Horse_Neck00_gr
+    400100: Horse_Neck01
+    400102: Horse_Neck01_crv
+    400104: Horse_Neck01_gr
+    400106: Horse_Neck02
+    400108: Horse_Neck02_crv
+    400110: Horse_Neck02_gr
+    400112: Horse_Root
+    400114: Horse_Shoulder_Mid
+    400116: Horse_Tail00
+    400118: Horse_Tail00_crv
+    400120: Horse_Tail00_gr
+    400122: Horse_Tail01
+    400124: Horse_Tail01_crv
+    400126: Horse_Tail01_gr
+    400128: Horse_Tail_end
+    400130: //RootNode
+    400132: SM_Horse
+    4300000: SM_Horse
+    4300002: CowboyHat
+    9500000: //RootNode
+    13700000: CowboyHat
+    13700002: SM_Horse
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

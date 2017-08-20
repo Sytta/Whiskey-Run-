@@ -39,11 +39,14 @@ public class BaseAbilityComponent : MonoBehaviour
 		{
 			if (GameManager.instance.players[PlayerId - 1].Abilities[Ability.Id] == 0)
 			{
-				Debug.Log ("Oops! You have no more charges...");
+				Debug.Log ("Oops! Player" + PlayerId + "have no more charges...");
 				return false;
 			} else
             {
+                // Decrease it
+                Debug.Log("Ability charges before: " + GameManager.instance.players[PlayerId - 1].Abilities[Ability.Id]);
                 GameManager.instance.players[PlayerId - 1].Abilities[Ability.Id]--;
+                Debug.Log("Ability charges after: " + GameManager.instance.players[PlayerId - 1].Abilities[Ability.Id]);
             }
 		}
 
