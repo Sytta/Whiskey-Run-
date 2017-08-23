@@ -21,6 +21,7 @@ public class NitroComponent : BaseAbilityComponent
 
         // Add speed to the caravan using it
         GameManager.instance.caravanSpanwer.caravans[PlayerId - 1].GetComponent<MotionControl>().AddModifier(5f, 5f, 2f);
+		GameManager.instance.AudioService.PlayOneShotSFX("JalapenoBoost");
 
 
         // Start cool down
