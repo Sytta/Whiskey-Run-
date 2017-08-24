@@ -75,7 +75,9 @@ public partial class GameStateMachine : MonoBehaviour
 
                     // Show win text
                     GameManager.instance.racingUI.GetComponent<RacingUI>().SetWinner(player, "First place!");
-                } 
+					GameManager.instance.AudioService.PlayOneShotSFX("FirstPlace" + UnityEngine.Random.Range(1, 2));
+
+				} 
 
                 playerFinished[player] = true;
             }

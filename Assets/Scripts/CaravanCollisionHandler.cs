@@ -34,7 +34,9 @@ public class CaravanCollisionHandler : MonoBehaviour {
                     {
                         Mathf.Max(owner.Abilities["Crate"] -= 1, 0);
                         inventoryView.DropItem(CaravanInventoryView.ItemTypes.Crate);
-                    }
+						GameManager.instance.AudioService.PlayOneShotSFX("CrateBreak");
+						GameManager.instance.AudioService.PlayOneShotSFX("GetHit" + UnityEngine.Random.Range(1, 2));
+					}
 				}
 			}
 		}
